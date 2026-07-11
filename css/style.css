@@ -23,6 +23,26 @@
 /* ------------------------------------------------------------------ */
 /* 1. DESIGN TOKENS                                                    */
 /* ------------------------------------------------------------------ */
+/* Metric-adjusted fallback fonts — minimise layout shift (CLS) when the web
+   fonts swap in. The fallbacks are scaled to match Inter/Playfair metrics so
+   text barely reflows once the real fonts load. */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial');
+  ascent-override: 90.44%;
+  descent-override: 22.52%;
+  line-gap-override: 0%;
+  size-adjust: 107.12%;
+}
+@font-face {
+  font-family: 'Playfair Fallback';
+  src: local('Georgia');
+  ascent-override: 97%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+  size-adjust: 104%;
+}
+
 :root {
   /* Core palette — deep cosmic dark */
   --navy-900: #05081c;
@@ -70,8 +90,8 @@
   --shadow-gold: 0 10px 40px rgba(212, 175, 55, 0.28);
 
   /* Typography */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Playfair Display', 'Playfair Fallback', Georgia, serif;
+  --font-body: 'Inter', 'Inter Fallback', system-ui, -apple-system, sans-serif;
   --font-hindi: 'Tiro Devanagari Hindi', 'Playfair Display', serif;
 
   /* Spacing & shape */
