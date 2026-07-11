@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Book a Consultation | Shri Shri Amit Agarwal</title>
+  <meta name="description" content="Contact Shri Shri Amit Agarwal in Kanpur to book an astrology or Vastu consultation. Call, WhatsApp or email — available for in-person and online consultations worldwide.">
+  <link rel="canonical" href="https://www.shrishriamitagarwal.com/contact/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact & Book a Consultation — Shri Shri Amit Agarwal">
+  <meta property="og:description" content="Call, WhatsApp or email to book your astrology or Vastu consultation.">
+  <meta property="og:image" content="https://www.shrishriamitagarwal.com/images/profile/amit-agarwal-standing.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/animations.css">
+</head>
+<body data-page="contact">
+  <div class="starfield" aria-hidden="true"></div>
+  <canvas id="stars-canvas" aria-hidden="true"></canvas>
+  <header class="site-header" id="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/" aria-label="Shri Shri Amit Agarwal — Home">
+        <img src="/assets/logo.svg" alt="" width="42" height="42">
+        <span class="brand-text">
+          <span class="brand-name">Amit Agarwal</span>
+          <span class="brand-sub">Astrology &amp; Vastu</span>
+        </span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/services/">Services</a>
+        <a href="/packages/">Packages</a>
+        <a href="/gallery/">Gallery</a>
+        <a href="/videos/">Videos</a>
+        <a href="/testimonials/">Reviews</a>
+        <a href="/contact/">Contact</a>
+        <span class="nav-cta"><a class="btn btn-sm" href="/contact/">Book Consultation</a></span>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow center">Get in Touch</span>
+        <h1>Book Your <span class="text-gold">Consultation</span></h1>
+        <p class="lead" style="max-width:64ch;margin:1rem auto 0;">Take the first step toward clarity. Reach out to schedule an in-person meeting in Kanpur or an online consultation from anywhere in the world.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a><span>›</span><span aria-current="page">Contact</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Form -->
+          <div class="card" data-reveal="left">
+            <h2 style="font-size:1.7rem;margin-bottom:0.4rem;">Send a Message</h2>
+            <p style="margin-bottom:1.4rem;">Fill in your details and we will connect with you shortly. Submitting opens WhatsApp with your message ready to send.</p>
+            <form id="contact-form" novalidate>
+              <div class="field">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" autocomplete="name" placeholder="Your full name" required>
+              </div>
+              <div class="grid grid-2" style="gap:0 1rem;">
+                <div class="field">
+                  <label for="phone">Phone / WhatsApp *</label>
+                  <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+91 ..." required>
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com">
+                </div>
+              </div>
+              <div class="field">
+                <label for="service">Interested In</label>
+                <select id="service" name="service">
+                  <option value="">Select a service…</option>
+                  <option>Vedic Astrology / Horoscope</option>
+                  <option>Marriage Matching</option>
+                  <option>Vastu Consultation</option>
+                  <option>Numerology</option>
+                  <option>Palmistry / Face Reading</option>
+                  <option>Gemstone Guidance</option>
+                  <option>Business / Career Guidance</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">Your Message *</label>
+                <textarea id="message" name="message" placeholder="Briefly describe what you are seeking guidance on…" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-block">Send via WhatsApp</button>
+              <p class="form-note">We respect your privacy. Your details are used only to respond to your enquiry.</p>
+              <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+
+          <!-- Info -->
+          <div class="info-card" data-reveal="right">
+            <div class="card">
+              <h3 style="margin-bottom:1.2rem;">Contact Details</h3>
+              <div class="info-line">
+                <span class="ic" id="ic-phone"></span>
+                <div><div class="k">Phone</div>
+                  <a class="v" href="tel:+919336333207">+91 93363 33207</a><br>
+                  <a class="v" href="tel:+917019001990">+91 70190 01990</a>
+                </div>
+              </div>
+              <div class="info-line" style="margin-top:1.1rem;">
+                <span class="ic" id="ic-mail"></span>
+                <div><div class="k">Email</div>
+                  <a class="v" href="mailto:homedataaa@rediff.com">homedataaa@rediff.com</a><br>
+                  <a class="v" href="mailto:homedataa@gmail.com">homedataa@gmail.com</a>
+                </div>
+              </div>
+              <div class="info-line" style="margin-top:1.1rem;">
+                <span class="ic" id="ic-pin"></span>
+                <div><div class="k">Location</div><div class="v">Kanpur, Uttar Pradesh, India</div></div>
+              </div>
+              <div class="info-line" style="margin-top:1.1rem;">
+                <span class="ic" id="ic-clock"></span>
+                <div><div class="k">Working Hours</div><div class="v">Mon – Sat · 10:00 AM – 7:00 PM<br><small style="color:var(--text-dim)">By prior appointment</small></div></div>
+              </div>
+              <a class="btn btn-whatsapp btn-block u-mt-2" data-wa="Namaste, I would like to book a consultation.">Chat on WhatsApp</a>
+            </div>
+
+            <div class="card">
+              <h3 style="margin-bottom:1rem;">Follow &amp; Connect</h3>
+              <div class="social-row" id="contact-social"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map -->
+    <section class="section-tight">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow center">Visit Us</span>
+          <h2>Find Us in <span class="text-gold">Kanpur</span></h2>
+        </div>
+        <div class="map-frame" data-reveal>
+          <iframe
+            title="Map of Kanpur, Uttar Pradesh"
+            src="https://www.google.com/maps?q=Kanpur,Uttar+Pradesh,India&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section bg-alt">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow center">Before You Book</span>
+          <h2>Frequently <span class="text-gold">Asked Questions</span></h2>
+        </div>
+        <div class="faq-list" id="faq-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="/" aria-label="Shri Shri Amit Agarwal">
+            <img src="/assets/logo.svg" alt="" width="42" height="42">
+            <span class="brand-text">
+              <span class="brand-name">Shri Shri Amit Agarwal</span>
+              <span class="brand-sub">Astrology &amp; Vastu</span>
+            </span>
+          </a>
+          <p>Internationally trusted Celebrity Astrologer, Vastu Consultant, Palmist &amp; Numerologist — blending Vedic wisdom with compassionate, practical guidance.</p>
+          <div class="social-row">
+            <a class="social-btn" data-ic="linkedin" href="https://www.linkedin.com/in/shri-shri-amit-agarwal-1a9832266" target="_blank" rel="noopener" aria-label="LinkedIn"></a>
+            <a class="social-btn" data-ic="youtube" href="https://youtube.com/@shrishriamitagrawal" target="_blank" rel="noopener" aria-label="YouTube"></a>
+            <a class="social-btn" data-ic="instagram" href="https://www.instagram.com/shri.shri.amit.agrawal" target="_blank" rel="noopener" aria-label="Instagram"></a>
+            <a class="social-btn" data-ic="facebook" href="https://www.facebook.com/profile.php?id=1749439378" target="_blank" rel="noopener" aria-label="Facebook"></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/packages/">Packages</a></li>
+            <li><a href="/gallery/">Gallery</a></li>
+            <li><a href="/videos/">Videos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="/services/">Vedic Astrology</a></li>
+            <li><a href="/services/">Vastu Consultation</a></li>
+            <li><a href="/services/">Marriage Matching</a></li>
+            <li><a href="/services/">Numerology</a></li>
+            <li><a href="/services/">Gemstone Guidance</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-contact">
+          <h5>Get in Touch</h5>
+          <ul>
+            <li><span class="ic" data-ic="pin"></span><span>Kanpur, Uttar Pradesh, India</span></li>
+            <li><span class="ic" data-ic="phone"></span><span><a href="tel:+919336333207">+91 93363 33207</a></span></li>
+            <li><span class="ic" data-ic="mail"></span><span><a href="mailto:homedataaa@rediff.com">homedataaa@rediff.com</a></span></li>
+            <li><span class="ic" data-ic="write"></span><span>Featured Writer at MathuraNow</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Shri Shri Amit Agarwal. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+  <a class="fab-wa" href="https://wa.me/919336333207?text=Namaste%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Shri%20Shri%20Amit%20Agarwal." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M8.5 8.5c-.3 0-.6.1-.8.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.1.7.6-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.1-1.3-.1-.1-.3-.2-.6-.4l-1.6-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.7-.3-1.5-.6-2.4-1.6-.7-.7-1.1-1.5-1.3-1.8-.1-.2 0-.4.1-.5l.5-.6c.1-.2.1-.3.2-.50-.2 0-.3-.1-.5l-.7-1.7c-.2-.5-.4-.4-.6-.4h-.4z" fill="currentColor" stroke="none"/></svg></a>
+  <button class="to-top" data-ic="arrow" aria-label="Back to top"></button>
+  <script src="/js/data.js"></script>
+  <script defer src="/js/animations.js"></script>
+  <script defer src="/js/slider.js"></script>
+  <script defer src="/js/gallery.js"></script>
+  <script defer src="/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var icons = { 'ic-phone': 'phone', 'ic-mail': 'mail', 'ic-pin': 'pin', 'ic-clock': 'clock' };
+      Object.keys(icons).forEach(function (id) {
+        var e = document.getElementById(id);
+        if (e && window.siteIcon) e.innerHTML = window.siteIcon(icons[id]);
+      });
+      // Social buttons
+      var s = window.SITE_DATA.profile.social;
+      var host = document.getElementById('contact-social');
+      if (host && window.siteIcon) {
+        host.innerHTML = [
+          ['linkedin', s.linkedin, 'LinkedIn'], ['youtube', s.youtube, 'YouTube'],
+          ['instagram', s.instagram, 'Instagram'], ['facebook', s.facebook, 'Facebook']
+        ].map(function (x) {
+          return '<a class="social-btn" href="' + x[1] + '" target="_blank" rel="noopener" aria-label="' + x[2] + '">' + window.siteIcon(x[0]) + '</a>';
+        }).join('');
+      }
+    });
+  </script>
+</body>
+</html>

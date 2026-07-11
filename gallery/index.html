@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Moments, Awards &amp; Events | Shri Shri Amit Agarwal</title>
+  <meta name="description" content="A visual journey through the awards, events, media features and Vastu projects of celebrity astrologer Shri Shri Amit Agarwal.">
+  <link rel="canonical" href="https://www.shrishriamitagarwal.com/gallery/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gallery — Shri Shri Amit Agarwal">
+  <meta property="og:description" content="Awards, events, media and Vastu projects — a visual journey.">
+  <meta property="og:image" content="https://www.shrishriamitagarwal.com/images/profile/amit-agarwal-standing.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/animations.css">
+</head>
+<body data-page="gallery">
+  <div class="starfield" aria-hidden="true"></div>
+  <canvas id="stars-canvas" aria-hidden="true"></canvas>
+  <header class="site-header" id="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/" aria-label="Shri Shri Amit Agarwal — Home">
+        <img src="/assets/logo.svg" alt="" width="42" height="42">
+        <span class="brand-text">
+          <span class="brand-name">Amit Agarwal</span>
+          <span class="brand-sub">Astrology &amp; Vastu</span>
+        </span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/services/">Services</a>
+        <a href="/packages/">Packages</a>
+        <a href="/gallery/">Gallery</a>
+        <a href="/videos/">Videos</a>
+        <a href="/testimonials/">Reviews</a>
+        <a href="/contact/">Contact</a>
+        <span class="nav-cta"><a class="btn btn-sm" href="/contact/">Book Consultation</a></span>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow center">Moments &amp; Memories</span>
+        <h1><span class="text-gold">Gallery</span></h1>
+        <p class="lead" style="max-width:64ch;margin:1rem auto 0;">A glimpse into the awards, events, media features and Vastu projects that mark a life of service and recognition.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a><span>›</span><span aria-current="page">Gallery</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="gallery-filters" id="gallery-filters" role="tablist" aria-label="Filter gallery"></div>
+        <div class="masonry" id="gallery-grid"></div>
+        <p class="u-center form-note u-mt-3">Photographs shown are elegant placeholders — replace the files in <code>/images/gallery</code> with real photos, keeping the same file names.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner" data-reveal="scale">
+          <h2>Be Part of the <span class="text-gold">Next Chapter</span></h2>
+          <p>Book your consultation and begin your own journey of clarity and transformation.</p>
+          <div class="btn-row"><a class="btn btn-lg" href="/contact/">Book Consultation</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="/" aria-label="Shri Shri Amit Agarwal">
+            <img src="/assets/logo.svg" alt="" width="42" height="42">
+            <span class="brand-text">
+              <span class="brand-name">Shri Shri Amit Agarwal</span>
+              <span class="brand-sub">Astrology &amp; Vastu</span>
+            </span>
+          </a>
+          <p>Internationally trusted Celebrity Astrologer, Vastu Consultant, Palmist &amp; Numerologist — blending Vedic wisdom with compassionate, practical guidance.</p>
+          <div class="social-row">
+            <a class="social-btn" data-ic="linkedin" href="https://www.linkedin.com/in/shri-shri-amit-agarwal-1a9832266" target="_blank" rel="noopener" aria-label="LinkedIn"></a>
+            <a class="social-btn" data-ic="youtube" href="https://youtube.com/@shrishriamitagrawal" target="_blank" rel="noopener" aria-label="YouTube"></a>
+            <a class="social-btn" data-ic="instagram" href="https://www.instagram.com/shri.shri.amit.agrawal" target="_blank" rel="noopener" aria-label="Instagram"></a>
+            <a class="social-btn" data-ic="facebook" href="https://www.facebook.com/profile.php?id=1749439378" target="_blank" rel="noopener" aria-label="Facebook"></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/packages/">Packages</a></li>
+            <li><a href="/gallery/">Gallery</a></li>
+            <li><a href="/videos/">Videos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="/services/">Vedic Astrology</a></li>
+            <li><a href="/services/">Vastu Consultation</a></li>
+            <li><a href="/services/">Marriage Matching</a></li>
+            <li><a href="/services/">Numerology</a></li>
+            <li><a href="/services/">Gemstone Guidance</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-contact">
+          <h5>Get in Touch</h5>
+          <ul>
+            <li><span class="ic" data-ic="pin"></span><span>Kanpur, Uttar Pradesh, India</span></li>
+            <li><span class="ic" data-ic="phone"></span><span><a href="tel:+919336333207">+91 93363 33207</a></span></li>
+            <li><span class="ic" data-ic="mail"></span><span><a href="mailto:homedataaa@rediff.com">homedataaa@rediff.com</a></span></li>
+            <li><span class="ic" data-ic="write"></span><span>Featured Writer at MathuraNow</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Shri Shri Amit Agarwal. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+  <a class="fab-wa" href="https://wa.me/919336333207?text=Namaste%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Shri%20Shri%20Amit%20Agarwal." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M8.5 8.5c-.3 0-.6.1-.8.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.1.7.6-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.1-1.3-.1-.1-.3-.2-.6-.4l-1.6-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.7-.3-1.5-.6-2.4-1.6-.7-.7-1.1-1.5-1.3-1.8-.1-.2 0-.4.1-.5l.5-.6c.1-.2.1-.3.2-.50-.2 0-.3-.1-.5l-.7-1.7c-.2-.5-.4-.4-.6-.4h-.4z" fill="currentColor" stroke="none"/></svg></a>
+  <button class="to-top" data-ic="arrow" aria-label="Back to top"></button>
+  <script src="/js/data.js"></script>
+  <script defer src="/js/animations.js"></script>
+  <script defer src="/js/slider.js"></script>
+  <script defer src="/js/gallery.js"></script>
+  <script defer src="/js/main.js"></script>
+</body>
+</html>
