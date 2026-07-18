@@ -21,7 +21,7 @@
     }
 
     grid.innerHTML = items.map((it, i) => `
-      <figure class="masonry-item" data-cat="${it.cat}" data-index="${i}" data-reveal>
+      <figure class="masonry-item" data-cat="${it.cat}" data-index="${i}">
         <img src="${it.img}" alt="${it.caption}" loading="lazy" width="600" height="450">
         <figcaption class="cap">${it.caption}</figcaption>
       </figure>`).join('');

@@ -19,7 +19,7 @@ window.SITE_DATA = {
     location: 'Kanpur, Uttar Pradesh, India',
     phones: ['+91 93363 33207', '+91 70190 01990'],
     whatsapp: '919336333207',
-    emails: ['homedataaa@rediff.com', 'homedataa@gmail.com'],
+    emails: ['contact@shrishriamit.com'],
     social: {
       linkedin: 'https://www.linkedin.com/in/shri-shri-amit-agarwal-1a9832266',
       youtube: 'https://youtube.com/@shrishriamitagrawal',
@@ -31,9 +31,9 @@ window.SITE_DATA = {
 
   /* ---- Headline stat counters (Home hero) ------------------------------ */
   stats: [
-    { value: 20,   suffix: '+',  label: 'Years of Experience' },
+    { value: 35,   suffix: '+',  label: 'Years of Experience' },
     { value: 50000, suffix: '+', label: 'Lives Guided' },
-    { value: 25,   suffix: '+',  label: 'Countries Served' },
+    { value: 75,   suffix: '+',  label: 'Countries Served' },
     { value: 15,   suffix: '+',  label: 'Awards & Honours' }
   ],
 
@@ -141,16 +141,35 @@ window.SITE_DATA = {
     }
   ],
 
-  /* ---- Testimonials & Google reviews ----------------------------------- */
+  /* ---- Testimonials (real reviews sourced from JustDial, 4.9 / 37) ----- */
   testimonials: [
-    { name: 'Rajesh Malhotra',  role: 'Business Owner, Mumbai',   rating: 5, source: 'Google Review',   text: 'His predictions were astonishingly accurate. The remedies he suggested transformed my business within months. A truly divine guide.' },
-    { name: 'Dr. Priya Sharma', role: 'Physician, Delhi',         rating: 5, source: 'Client',           text: 'I consulted Amit ji for my marriage matching. His clarity and compassion gave our families complete peace of mind. Forever grateful.' },
-    { name: 'Anand Kapoor',     role: 'Entrepreneur, London',     rating: 5, source: 'Google Review',   text: 'Even over a video call from the UK, his insight into my career was spot on. The most trusted astrologer I have ever consulted.' },
-    { name: 'Sunita Verma',     role: 'Homemaker, Kanpur',        rating: 5, source: 'Client',           text: 'Our home Vastu consultation changed the energy of our house completely. Health and harmony returned to our family.' },
-    { name: 'Vikram Singh',     role: 'Industrialist, Lucknow',   rating: 5, source: 'Google Review',   text: 'Professional, precise and genuinely caring. His industrial Vastu guidance improved our factory output remarkably.' },
-    { name: 'Meera Nair',       role: 'IT Professional, Bengaluru',rating: 5, source: 'Client',          text: 'The gemstone he recommended brought a noticeable positive shift in my confidence and opportunities. Highly recommended.' },
-    { name: 'Arjun Reddy',      role: 'Film Producer, Hyderabad', rating: 5, source: 'Google Review',   text: 'A rare blend of ancient wisdom and modern understanding. His guidance has become essential to our production decisions.' },
-    { name: 'Kavita Joshi',     role: 'Teacher, Pune',            rating: 5, source: 'Client',           text: 'Amit ji patiently answered every question about my child\'s future. His warmth and accuracy are simply unmatched.' }
+    { name: 'Rohit',              role: 'Verified Client', rating: 5, source: 'JustDial', text: 'I had an amazing experience with Shri Shri Amit Agarwal. He provides great solutions to life’s challenges and helps you find peace and clarity. His guidance is both practical and spiritual. I felt supported and uplifted after our sessions — highly recommend him!' },
+    { name: 'Damini Gupta',       role: 'Verified Client', rating: 5, source: 'JustDial', text: 'Life-changing health guidance. I was dealing with recurring health issues with no clear medical diagnosis. He patiently listened to my concerns and did a detailed analysis of my horoscope. His predictions were incredibly accurate.' },
+    { name: 'PREKER',             role: 'Verified Client', rating: 5, source: 'JustDial', text: 'Exceptional astrological guidance. From the very beginning he listened with great patience and offered clear, accurate readings based on my birth chart. His predictions about my career and personal life were remarkably accurate, and the remedies were simple and effective.' },
+    { name: 'La Rozaa Boutique',  role: 'Verified Client', rating: 5, source: 'JustDial', text: 'A great astrologer who gave great solutions to my questions. He was friendly and listened well. I felt comfortable during our talk and his advice helped me a lot. Overall a wonderful experience.' },
+    { name: 'Aruna',              role: 'Verified Client', rating: 5, source: 'JustDial', text: 'I had a great interaction with Shri Shri Amit Agarwal. He was very helpful and friendly, and the services were reasonably priced. I felt comfortable asking questions, and he answered them well. A positive experience I really appreciated.' },
+    { name: 'Sunita',             role: 'Verified Client', rating: 5, source: 'JustDial', text: 'I love the way he listened and gave solutions — truly a spiritual and wonderful person with deep knowledge.' },
+    { name: 'Kiran Gupta',        role: 'Verified Client', rating: 5, source: 'JustDial', text: 'Had an amazing experience and his reading was profound and accurate.' },
+    { name: 'Anjali',             role: 'Verified Client', rating: 5, source: 'JustDial', text: 'I had a great experience and his predictions are so absolute and accurate to the maximum.' }
+  ],
+
+  /* ---- Google reviews (add real ones from your Google Business profile) ---
+   * Google blocks automated export, so paste them here manually. Format:
+   *   { name: 'Reviewer', role: 'Google Review', rating: 5, source: 'Google', text: '…' }
+   * The "Loved on Google" section appears automatically once this has entries. */
+  googleReviews: [
+    { name: 'Rahul Agarwal',         role: 'Google Review', rating: 5, source: 'Google', text: 'I consulted Shri Amit Ji regarding my horoscope (Kundali) — a very positive and insightful experience. He has deep knowledge of astrology and explained things clearly. I appreciated his calm and patient approach; he listened carefully and the remedies he suggested were simple and practical.' },
+    { name: 'Prakher Singhal',       role: 'Local Guide',   rating: 5, source: 'Google', text: 'I had a consultation with Shri Amit Agrawal Ji and I’m truly impressed with his guidance and accuracy. He patiently listened and gave detailed insights into my horoscope. His predictions about my health and career were precise, practical and reassuring. Highly recommended.' },
+    { name: 'Dr. Vivek Kumar Shukla',role: 'Google Review', rating: 5, source: 'Google', text: 'Shri Shri Amit Agarwal ji is a good astrologer — the predictions are accurate and he suggests viable solutions. He has in-depth knowledge of Vastu and Palmistry with scientific connections. One shall definitely benefit from his consultations. Strongly recommended.' },
+    { name: 'Himanshu Agarwal',      role: 'Local Guide',   rating: 5, source: 'Google', text: 'Amazing astrologer! Shri Shri Amit Agarwal gave accurate insights and very helpful guidance. Highly trustworthy and highly recommended.' },
+    { name: 'Divya Melwani',         role: 'Google Review', rating: 5, source: 'Google', text: 'I recently consulted Sri Amit ji — he’s very good at reading horoscope (kundali) and has good knowledge of it. He listens patiently and calmly and suggests remedies which can be done at ease. Thank you for your guidance.' },
+    { name: 'Uttam Prasad Kesarwani',role: 'Google Review', rating: 5, source: 'Google', text: 'Good reader of horoscope and his advice is par excellence. Proud of him for being such a nice human being. Keep rocking! 🙏' },
+    { name: 'Vinod K Mishra',        role: 'Google Review', rating: 5, source: 'Google', text: 'Very good astrologer having deep knowledge of the subject. I surely recommend him. Value for money — very accurate and trustworthy.' },
+    { name: 'Roli',                  role: 'Google Review', rating: 5, source: 'Google', text: 'Best astrologer and Vastu specialist, really value for money. His approach is very positive and he is a very good listener. I highly recommend him.' },
+    { name: 'Pranav Chawla',         role: 'Local Guide',   rating: 5, source: 'Google', text: 'Incredibly insightful reading! He was spot-on with my chart and offered clear, uplifting guidance.' },
+    { name: 'Sanjay Srivastava',     role: 'Google Review', rating: 5, source: 'Google', text: 'One stop place for all your problems and queries. Have faith and trust in him.' },
+    { name: 'Sayraa Chawla',         role: 'Google Review', rating: 5, source: 'Google', text: 'Amazing experience! His deep understanding of the stars gave me clarity and hope.' },
+    { name: 'Harshit Agarwal',       role: 'Google Review', rating: 5, source: 'Google', text: 'Most accurate palm reading — highly recommended.' }
   ],
 
   /* ---- Gallery items (replace `img` with real photos in /images/gallery) */
@@ -177,6 +196,12 @@ window.SITE_DATA = {
     { id: '', title: 'Gemstones & Their Energy',                desc: 'Choosing the right Abhimantrit gemstone for you.' },
     { id: '', title: 'Marriage Matching Explained',             desc: 'Ashtakoot Guna Milan for a blissful married life.' },
     { id: '', title: 'Motivational Talk: Faith & Success',      desc: 'Wisdom for a purposeful and prosperous life.' }
+  ],
+
+  /* ---- Featured self-hosted (portrait) videos -------------------------- */
+  localVideos: [
+    { src: '/assets/videos/ronnie-shah.mp4', poster: '/assets/videos/ronnie-shah.jpg', title: 'Ronnie Shah', role: 'Actor' },
+    { src: '/assets/videos/vishal-ranjan-mishra.mp4', poster: '/assets/videos/vishal-ranjan-mishra.jpg', title: 'Vishal Ranjan Mishra', role: 'Film Director' }
   ],
 
   /* ---- Awards & recognitions (About + Home) ---------------------------- */

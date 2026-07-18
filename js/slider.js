@@ -29,8 +29,9 @@
   function renderGrid() {
     const host = document.getElementById('testimonials-grid');
     if (!host) return;
-    host.innerHTML = D.testimonials.map((t, i) =>
-      `<div data-reveal data-delay="${(i % 3) + 1}">${card(t)}</div>`).join('');
+    // No data-reveal wrapper: review cards must ALWAYS be visible (they are
+    // re-rendered, which was defeating the scroll-reveal observer).
+    host.innerHTML = D.testimonials.map(t => `<div>${card(t)}</div>`).join('');
   }
 
   /* ---- Carousel (home + testimonials highlight) ---- */
@@ -101,7 +102,19 @@
     let t; window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(layout, 200); });
   }
 
-  window.initSlider = function () { renderGrid(); renderSlider(); };
+  /* ---- Google reviews grid (auto-hides until data.googleReviews has items) ---- */
+  function renderGoogleGrid() {
+    const host = document.getElementById('google-reviews-grid');
+    if (!host) return;
+    const section = document.getElementById('google-reviews-section');
+    const list = D.googleReviews || [];
+    if (!list.length) { if (section) section.style.display = 'none'; return; }
+    if (section) section.style.display = '';
+    // Show a handful on the page; the rest are on Google ("See more" button)
+    host.innerHTML = list.slice(0, 6).map(t => `<div>${card(t)}</div>`).join('');
+  }
+
+  window.initSlider = function () { renderGrid(); renderSlider(); renderGoogleGrid(); };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', window.initSlider);
   else window.initSlider();
 })();

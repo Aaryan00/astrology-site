@@ -585,6 +585,35 @@ section { position: relative; }
 .info-line .k { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); }
 .info-line .v { color: var(--soft-white); }
 .info-line a.v:hover { color: var(--gold-400); }
+
+/* Booking note banner */
+.booking-note {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1.1rem 1.4rem; margin-bottom: 2.2rem; border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(91,60,160,0.14));
+  border: 1px solid var(--line);
+}
+.booking-note .bn-icon { color: var(--gold-400); font-size: 1.25rem; line-height: 1.5; flex: none; }
+.booking-note p { color: var(--text); font-size: 0.98rem; margin: 0; }
+.booking-note strong { color: var(--soft-white); }
+
+/* Optional-field hint */
+.opt { color: var(--text-dim); font-weight: 400; font-size: 0.82em; }
+
+/* Payment card */
+.pay-card { text-align: center; }
+.pay-card h3 { margin-bottom: 1.1rem; }
+.pay-qr { display: inline-block; padding: 12px; background: #fff; border-radius: 14px; box-shadow: var(--shadow-md); line-height: 0; }
+.pay-qr img { width: 220px; height: 220px; max-width: 62vw; }
+.pay-scan { margin: 1rem 0 1.2rem; font-size: 0.9rem; color: var(--text-muted); }
+.pay-scan strong { color: var(--gold-400); }
+.pay-bank {
+  text-align: left; display: grid; gap: 0.55rem; padding: 1rem 1.1rem; margin-bottom: 1rem;
+  border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--line-soft);
+}
+.pay-row { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.9rem; }
+.pay-row span { color: var(--text-dim); }
+.pay-row b { color: var(--soft-white); font-weight: 600; letter-spacing: 0.02em; }
 .map-frame { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow-md); }
 .map-frame iframe { width: 100%; height: 340px; border: 0; display: block; filter: grayscale(0.2) contrast(1.05); }
 
@@ -744,6 +773,21 @@ section { position: relative; }
 .video-meta p { font-size: 0.9rem; }
 .video-featured .video-thumb { aspect-ratio: 16/8; }
 
+/* Portrait video reels (self-hosted) */
+.reel-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 330px)); gap: clamp(1.4rem, 3vw, 2.6rem); justify-content: center; }
+.reel-card { display: flex; flex-direction: column; }
+.reel-media {
+  position: relative; aspect-ratio: 9 / 16; border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--glass-border); box-shadow: var(--shadow-lg); background: #000;
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.reel-card:hover .reel-media { transform: translateY(-5px); box-shadow: 0 26px 70px rgba(0,0,0,0.6); }
+.reel-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.reel-meta { margin-top: 1rem; text-align: center; }
+.reel-name { display: block; font-family: var(--font-display); font-size: 1.2rem; color: var(--soft-white); }
+.reel-role { display: block; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-400); margin-top: 0.25rem; }
+@media (max-width: 540px) { .reel-grid { grid-template-columns: minmax(0, 320px); } }
+
 /* Marquee (trust logos / roles) */
 .trust-strip { border-block: 1px solid var(--line-soft); padding-block: 1.5rem; overflow: hidden; }
 .marquee { display: flex; gap: 3rem; width: max-content; animation: marquee 32s linear infinite; }
@@ -781,6 +825,41 @@ section { position: relative; }
 .slider-dots { display: flex; gap: 0.5rem; }
 .slider-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--line); transition: all var(--dur) var(--ease); }
 .slider-dot.active { background: var(--grad-gold); width: 26px; border-radius: 6px; }
+
+/* Package booking modal */
+.pkg-modal { position: fixed; inset: 0; z-index: 300; display: none; }
+.pkg-modal.open { display: block; }
+.pkg-modal-backdrop { position: absolute; inset: 0; background: rgba(5,8,28,0.82); backdrop-filter: blur(6px); }
+.pkg-modal-card {
+  position: relative; z-index: 1; width: min(100% - 2rem, 440px); max-height: 92vh; overflow-y: auto;
+  margin: max(2vh, 1rem) auto; text-align: center;
+  padding: clamp(1.6rem, 4vw, 2.4rem); border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, #141043, var(--navy-800));
+  border: 1px solid var(--line); box-shadow: var(--shadow-lg);
+  animation: fadeInUp 0.4s var(--ease);
+}
+.pkg-modal-card h3 { margin: 0.6rem 0 1.2rem; font-size: clamp(1.3rem, 1.1rem + 1vw, 1.7rem); color: var(--soft-white); }
+.pkg-modal-close {
+  position: absolute; top: 0.8rem; right: 0.9rem; width: 38px; height: 38px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 1.5rem; color: var(--text-muted);
+  border: 1px solid var(--line-soft); background: var(--glass-bg);
+}
+.pkg-modal-close:hover { color: var(--gold-400); border-color: var(--gold-500); }
+.pm-amount-label { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.6rem; }
+.pm-amounts { display: grid; gap: 0.5rem; margin-bottom: 1.4rem; }
+.pm-amount {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.7rem 1rem; border-radius: 12px; background: rgba(212,175,55,0.08); border: 1px solid var(--line);
+}
+.pm-amount span { font-size: 0.85rem; color: var(--text-muted); text-align: left; }
+.pm-amount b { font-family: var(--font-display); font-size: 1.25rem; color: var(--gold-400); white-space: nowrap; }
+.pm-qr { display: inline-block; padding: 10px; background: #fff; border-radius: 12px; line-height: 0; box-shadow: var(--shadow-md); }
+.pm-qr img { width: 190px; height: 190px; max-width: 56vw; }
+.pm-upi { margin: 0.9rem 0 1.1rem; font-size: 0.88rem; color: var(--text-muted); }
+.pm-upi strong { color: var(--gold-400); }
+.pm-bank { text-align: left; display: grid; gap: 0.45rem; padding: 0.9rem 1rem; margin-bottom: 1.1rem; border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--line-soft); }
+.pm-note { font-size: 0.9rem; color: var(--text); margin-bottom: 1.3rem; }
+.pm-note strong { color: var(--soft-white); }
 
 /* noscript nav fallback */
 .noscript-note { background: var(--purple-700); color: var(--soft-white); text-align: center; padding: 0.6rem; font-size: 0.9rem; }

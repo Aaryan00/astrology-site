@@ -6,7 +6,11 @@
   <title>Contact &amp; Book a Consultation | Shri Shri Amit Agarwal</title>
   <meta name="description" content="Contact Shri Shri Amit Agarwal in Kanpur to book an astrology or Vastu consultation. Call, WhatsApp or email — available for in-person and online consultations worldwide.">
   <link rel="canonical" href="https://shrishriamit.com/contact/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#0a0e27">
   <meta name="geo.region" content="IN-UP">
@@ -25,9 +29,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/responsive.css">
-  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/style.css?v=5">
+  <link rel="stylesheet" href="/css/responsive.css?v=5">
+  <link rel="stylesheet" href="/css/animations.css?v=5">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shrishriamit.com/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://shrishriamit.com/contact/"}]}
   </script>
@@ -78,6 +82,10 @@
 
     <section class="section">
       <div class="container">
+        <div class="booking-note" data-reveal>
+          <span class="bn-icon" aria-hidden="true">✦</span>
+          <p><strong>How to book:</strong> Pay for your desired package using the payment details on this page, then share the <strong>UTR / Reference ID</strong> along with your details in the form below. Once received, we will confirm your appointment.</p>
+        </div>
         <div class="contact-grid">
           <!-- Form -->
           <div class="card" data-reveal="left">
@@ -98,6 +106,16 @@
                   <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com">
                 </div>
               </div>
+              <div class="grid grid-2" style="gap:0 1rem;">
+                <div class="field">
+                  <label for="dob">Date of Birth <span class="opt">(optional)</span></label>
+                  <input type="date" id="dob" name="dob" autocomplete="bday">
+                </div>
+                <div class="field">
+                  <label for="tob">Time of Birth <span class="opt">(optional)</span></label>
+                  <input type="time" id="tob" name="tob">
+                </div>
+              </div>
               <div class="field">
                 <label for="service">Interested In</label>
                 <select id="service" name="service">
@@ -113,6 +131,10 @@
                 </select>
               </div>
               <div class="field">
+                <label for="utr">UTR / Payment Reference ID <span class="opt">(optional)</span></label>
+                <input type="text" id="utr" name="utr" placeholder="Enter after payment to confirm your slot">
+              </div>
+              <div class="field">
                 <label for="message">Your Message *</label>
                 <textarea id="message" name="message" placeholder="Briefly describe what you are seeking guidance on…" required></textarea>
               </div>
@@ -124,6 +146,21 @@
 
           <!-- Info -->
           <div class="info-card" data-reveal="right">
+            <div class="card pay-card">
+              <h3>Pay &amp; Book</h3>
+              <div class="pay-qr">
+                <img src="/assets/payment-qr.png" alt="Scan this UPI QR code to pay Amit Agrawal" width="220" height="220" loading="lazy">
+              </div>
+              <p class="pay-scan">Scan with any UPI app · <strong>homedataa@oksbi</strong></p>
+              <div class="pay-bank">
+                <div class="pay-row"><span>Account Name</span><b>Amit Agrawal</b></div>
+                <div class="pay-row"><span>Bank</span><b>State Bank of India</b></div>
+                <div class="pay-row"><span>A/C Number</span><b>10387966536</b></div>
+                <div class="pay-row"><span>IFSC Code</span><b>SBIN0003752</b></div>
+                <div class="pay-row"><span>Branch</span><b>Ushmanpur, Kanpur</b></div>
+              </div>
+              <p class="form-note">After paying, enter the UTR / Reference ID in the form to confirm your appointment.</p>
+            </div>
             <div class="card">
               <h3 style="margin-bottom:1.2rem;">Contact Details</h3>
               <div class="info-line">
@@ -136,8 +173,7 @@
               <div class="info-line" style="margin-top:1.1rem;">
                 <span class="ic" id="ic-mail"></span>
                 <div><div class="k">Email</div>
-                  <a class="v" href="mailto:homedataaa@rediff.com">homedataaa@rediff.com</a><br>
-                  <a class="v" href="mailto:homedataa@gmail.com">homedataa@gmail.com</a>
+                  <a class="v" href="mailto:contact@shrishriamit.com">contact@shrishriamit.com</a>
                 </div>
               </div>
               <div class="info-line" style="margin-top:1.1rem;">
@@ -232,7 +268,7 @@
           <ul>
             <li><span class="ic" data-ic="pin"></span><span>Kanpur, Uttar Pradesh, India</span></li>
             <li><span class="ic" data-ic="phone"></span><span><a href="tel:+919336333207">+91 93363 33207</a></span></li>
-            <li><span class="ic" data-ic="mail"></span><span><a href="mailto:homedataaa@rediff.com">homedataaa@rediff.com</a></span></li>
+            <li><span class="ic" data-ic="mail"></span><span><a href="mailto:contact@shrishriamit.com">contact@shrishriamit.com</a></span></li>
             <li><span class="ic" data-ic="write"></span><span>Featured Writer at MathuraNow</span></li>
           </ul>
         </div>
@@ -249,11 +285,11 @@
   </footer>
   <a class="fab-wa" href="https://wa.me/919336333207?text=Namaste%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Shri%20Shri%20Amit%20Agarwal." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M8.5 8.5c-.3 0-.6.1-.8.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.1.7.6-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.1-1.3-.1-.1-.3-.2-.6-.4l-1.6-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.7-.3-1.5-.6-2.4-1.6-.7-.7-1.1-1.5-1.3-1.8-.1-.2 0-.4.1-.5l.5-.6c.1-.2.1-.3.2-.50-.2 0-.3-.1-.5l-.7-1.7c-.2-.5-.4-.4-.6-.4h-.4z" fill="currentColor" stroke="none"/></svg></a>
   <button class="to-top" data-ic="arrow" aria-label="Back to top"></button>
-  <script src="/js/data.js"></script>
-  <script defer src="/js/animations.js"></script>
-  <script defer src="/js/slider.js"></script>
-  <script defer src="/js/gallery.js"></script>
-  <script defer src="/js/main.js"></script>
+  <script src="/js/data.js?v=5"></script>
+  <script defer src="/js/animations.js?v=5"></script>
+  <script defer src="/js/slider.js?v=5"></script>
+  <script defer src="/js/gallery.js?v=5"></script>
+  <script defer src="/js/main.js?v=5"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var icons = { 'ic-phone': 'phone', 'ic-mail': 'mail', 'ic-pin': 'pin', 'ic-clock': 'clock' };

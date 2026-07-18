@@ -179,7 +179,7 @@
         <p>${p.summary}</p>
         <div class="pkg-tiers">${tiers}</div>
         <ul class="pkg-features">${feats}</ul>
-        <a class="btn btn-block" href="${waLink(msg)}" target="_blank" rel="noopener">Book Now</a>
+        <button type="button" class="btn btn-block pkg-book" data-pkg="${p.id}">Book Now</button>
       </article>`;
   }
   function renderPackages(target, filter) {
@@ -221,6 +221,25 @@
     if (gridHost) gridHost.innerHTML = rest.map((v, i) => videoCard(v, i)).join('');
   }
 
+  // Self-hosted portrait videos (native HTML5 <video>)
+  function renderLocalVideos() {
+    const host = el('featured-videos');
+    if (!host || !D.localVideos) return;
+    host.innerHTML = D.localVideos.map((v, i) => `
+      <figure class="reel-card" data-reveal data-delay="${(i % 3) + 1}">
+        <div class="reel-media">
+          <video controls preload="metadata" playsinline poster="${v.poster}" aria-label="${v.title}">
+            <source src="${v.src}" type="video/mp4">
+            Your browser does not support embedded videos.
+          </video>
+        </div>
+        <figcaption class="reel-meta">
+          <span class="reel-name">${v.title}</span>
+          ${v.role ? `<span class="reel-role">${v.role}</span>` : ''}
+        </figcaption>
+      </figure>`).join('');
+  }
+
   function renderFaqs(target, limit) {
     const host = el(target); if (!host) return;
     const list = limit ? D.faqs.slice(0, limit) : D.faqs;
@@ -229,6 +248,64 @@
         <summary class="faq-q">${f.q}<span class="plus" aria-hidden="true"></span></summary>
         <div class="faq-a">${f.a}</div>
       </details>`).join('');
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* PACKAGE BOOKING MODAL (QR + amount + "share form" note)            */
+  /* ------------------------------------------------------------------ */
+  function initPackageModal() {
+    let modal = document.getElementById('pkg-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'pkg-modal';
+      modal.className = 'pkg-modal';
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      modal.setAttribute('aria-hidden', 'true');
+      modal.innerHTML = `
+        <div class="pkg-modal-backdrop" data-close></div>
+        <div class="pkg-modal-card" role="document">
+          <button class="pkg-modal-close" data-close aria-label="Close">&times;</button>
+          <span class="eyebrow center">Book Your Appointment</span>
+          <h3 id="pm-title"></h3>
+          <p class="pm-amount-label">Amount payable for this package</p>
+          <div class="pm-amounts" id="pm-amounts"></div>
+          <div class="pm-qr"><img src="/assets/payment-qr.png" alt="Scan to pay via UPI" width="190" height="190" loading="lazy"></div>
+          <p class="pm-upi">Scan with any UPI app &middot; <strong>homedataa@oksbi</strong></p>
+          <div class="pm-bank">
+            <div class="pay-row"><span>Account Name</span><b>Amit Agrawal</b></div>
+            <div class="pay-row"><span>Bank</span><b>State Bank of India</b></div>
+            <div class="pay-row"><span>A/C Number</span><b>10387966536</b></div>
+            <div class="pay-row"><span>IFSC</span><b>SBIN0003752</b></div>
+          </div>
+          <p class="pm-note">✦ After paying, please <strong>share your UTR / Reference ID and details in the form on our Contact page</strong> — we will confirm your appointment.</p>
+          <a class="btn btn-block" href="/contact/">Go to Contact Form</a>
+        </div>`;
+      document.body.appendChild(modal);
+      modal.querySelectorAll('[data-close]').forEach(x => x.addEventListener('click', close));
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+
+      // Delegated click on any "Book Now" button
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.pkg-book'); if (!btn) return;
+        const pkg = D.packages.find(p => p.id === btn.dataset.pkg);
+        if (pkg) open(pkg);
+      });
+    }
+    function open(pkg) {
+      modal.querySelector('#pm-title').textContent = pkg.name;
+      modal.querySelector('#pm-amounts').innerHTML = pkg.tiers.map(t =>
+        `<div class="pm-amount"><span>${t.label}</span><b>${t.price}</b></div>`).join('');
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      modal.querySelector('.pkg-modal-close').focus();
+    }
+    function close() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
   }
 
   /* ------------------------------------------------------------------ */
@@ -244,6 +321,9 @@
       const email = (data.get('email') || '').toString().trim();
       const phone = (data.get('phone') || '').toString().trim();
       const service = (data.get('service') || '').toString().trim();
+      const dob = (data.get('dob') || '').toString().trim();
+      const tob = (data.get('tob') || '').toString().trim();
+      const utr = (data.get('utr') || '').toString().trim();
       const message = (data.get('message') || '').toString().trim();
 
       if (!name || !phone || !message) {
@@ -261,7 +341,10 @@
         `Namaste, I would like to book a consultation.%0A%0A` +
         `*Name:* ${name}%0A*Phone:* ${phone}%0A` +
         (email ? `*Email:* ${email}%0A` : '') +
+        (dob ? `*Date of Birth:* ${dob}%0A` : '') +
+        (tob ? `*Time of Birth:* ${tob}%0A` : '') +
         (service ? `*Interested in:* ${service}%0A` : '') +
+        (utr ? `*UTR / Payment Ref:* ${utr}%0A` : '') +
         `*Message:* ${message}`;
       window.open(`https://wa.me/${P.whatsapp}?text=${text}`, '_blank', 'noopener');
       status.className = 'form-status ok';
@@ -296,15 +379,18 @@
     renderPackages('packages-vastu', 'vastu');
     renderAwards('awards-grid');
     renderVideos();
+    renderLocalVideos();
     renderFaqs('faq-list', el('faq-home') ? 4 : null);
 
     initCounters();
     initContactForm();
+    initPackageModal();
 
-    // Re-run reveal + counters after dynamic injection
-    if (window.initReveal) window.initReveal();
+    // Render all dynamic content FIRST, then observe everything for scroll-reveal
+    // (initReveal must run last, or freshly-injected cards stay invisible at opacity:0)
     if (window.initSlider) window.initSlider();
     if (window.initGallery) window.initGallery();
+    if (window.initReveal) window.initReveal();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
