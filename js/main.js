@@ -95,8 +95,20 @@
       window.addEventListener('scroll', onScroll, { passive: true });
     }
 
-    // Fill decorative icons (footer + back-to-top) via [data-ic]
+    // Fill decorative icons (footer, cards, back-to-top) via [data-ic]
     document.querySelectorAll('[data-ic]').forEach(e => { e.innerHTML = icon(e.dataset.ic); });
+
+    // Contact page: build the social-links row (was an inline script; moved
+    // here so pages carry no inline JS and a strict CSP can be enforced)
+    const socialHost = document.getElementById('contact-social');
+    if (socialHost) {
+      const s = P.social;
+      socialHost.innerHTML = [
+        ['linkedin', s.linkedin, 'LinkedIn'], ['youtube', s.youtube, 'YouTube'],
+        ['instagram', s.instagram, 'Instagram'], ['facebook', s.facebook, 'Facebook']
+      ].map(([ic, href, label]) =>
+        `<a class="social-btn" href="${href}" target="_blank" rel="noopener" aria-label="${label}">${icon(ic)}</a>`).join('');
+    }
 
     // Back-to-top button
     const top = document.querySelector('.to-top');
@@ -337,15 +349,19 @@
         status.textContent = 'Please enter a valid email address, or leave it blank.';
         return;
       }
-      const text =
-        `Namaste, I would like to book a consultation.%0A%0A` +
-        `*Name:* ${name}%0A*Phone:* ${phone}%0A` +
-        (email ? `*Email:* ${email}%0A` : '') +
-        (dob ? `*Date of Birth:* ${dob}%0A` : '') +
-        (tob ? `*Time of Birth:* ${tob}%0A` : '') +
-        (service ? `*Interested in:* ${service}%0A` : '') +
-        (utr ? `*UTR / Payment Ref:* ${utr}%0A` : '') +
-        `*Message:* ${message}`;
+      // Build the message as plain text, then URL-encode the whole thing once —
+      // prevents special characters (&, #, emoji) from breaking or injecting into the URL.
+      const lines = [
+        'Namaste, I would like to book a consultation.', '',
+        `*Name:* ${name}`, `*Phone:* ${phone}`
+      ];
+      if (email) lines.push(`*Email:* ${email}`);
+      if (dob) lines.push(`*Date of Birth:* ${dob}`);
+      if (tob) lines.push(`*Time of Birth:* ${tob}`);
+      if (service) lines.push(`*Interested in:* ${service}`);
+      if (utr) lines.push(`*UTR / Payment Ref:* ${utr}`);
+      lines.push(`*Message:* ${message}`);
+      const text = encodeURIComponent(lines.join('\n'));
       window.open(`https://wa.me/${P.whatsapp}?text=${text}`, '_blank', 'noopener');
       status.className = 'form-status ok';
       status.textContent = 'Thank you! Your WhatsApp is opening with your details pre-filled. If it does not, please call us directly.';

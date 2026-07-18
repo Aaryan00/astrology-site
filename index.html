@@ -45,9 +45,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css?v=5">
-  <link rel="stylesheet" href="/css/responsive.css?v=5">
-  <link rel="stylesheet" href="/css/animations.css?v=5">
+  <link rel="stylesheet" href="/css/style.css?v=6">
+  <link rel="stylesheet" href="/css/responsive.css?v=6">
+  <link rel="stylesheet" href="/css/animations.css?v=6">
 
   <!-- Structured data: WebSite + LocalBusiness + Person + FAQ -->
   <script type="application/ld+json">
@@ -55,6 +55,7 @@
   </script>
 </head>
 <body data-page="index">
+  <a class="skip-link" href="#main">Skip to main content</a>
   <!-- Cosmic background -->
   <div class="starfield" aria-hidden="true"></div>
   <canvas id="stars-canvas" aria-hidden="true"></canvas>
@@ -92,7 +93,7 @@
     </p>
   </noscript>
 
-  <main>
+  <main id="main">
     <!-- ============================ HERO ============================ -->
     <section class="hero">
       <div class="cosmic-glow" style="width:420px;height:420px;background:radial-gradient(circle,rgba(91,60,160,0.5),transparent 70%);top:-6%;right:6%;" aria-hidden="true"></div>
@@ -195,19 +196,19 @@
         </div>
         <div class="grid grid-4">
           <article class="card highlight-card" data-reveal data-delay="1">
-            <span class="ic" id="hl1"></span>
+            <span class="ic" data-ic="trophy"></span>
             <div><h4>Rotary Leadership</h4><p>Charter President, Rotary Club Kanpur Global &amp; PAG, District 3110.</p></div>
           </article>
           <article class="card highlight-card" data-reveal data-delay="2">
-            <span class="ic" id="hl2"></span>
+            <span class="ic" data-ic="film"></span>
             <div><h4>Film Industry</h4><p>Official Astrological Guide for Notout Entertainment.</p></div>
           </article>
           <article class="card highlight-card" data-reveal data-delay="3">
-            <span class="ic" id="hl3"></span>
+            <span class="ic" data-ic="temple"></span>
             <div><h4>Vastu Projects</h4><p>Pro-bono Vastu for the Late G. K. Singhania Loco Railway Cricket Stadium.</p></div>
           </article>
           <article class="card highlight-card" data-reveal data-delay="4">
-            <span class="ic" id="hl4"></span>
+            <span class="ic" data-ic="users"></span>
             <div><h4>Celebrity Consults</h4><p>Sought after by entrepreneurs, professionals &amp; public figures worldwide.</p></div>
           </article>
         </div>
@@ -322,20 +323,10 @@
   <button class="to-top" data-ic="arrow" aria-label="Back to top"></button>
 
   <!-- Scripts (data first, main.js last) -->
-  <script src="/js/data.js?v=5"></script>
-  <script defer src="/js/animations.js?v=5"></script>
-  <script defer src="/js/slider.js?v=5"></script>
-  <script defer src="/js/gallery.js?v=5"></script>
-  <script defer src="/js/main.js?v=5"></script>
-  <script>
-    // Populate highlight icons once main.js icon library is ready
-    document.addEventListener('DOMContentLoaded', function () {
-      var map = { hl1: 'trophy', hl2: 'film', hl3: 'temple', hl4: 'users' };
-      Object.keys(map).forEach(function (id) {
-        var elx = document.getElementById(id);
-        if (elx && window.siteIcon) elx.innerHTML = window.siteIcon(map[id]);
-      });
-    });
-  </script>
+  <script src="/js/data.js?v=6"></script>
+  <script defer src="/js/animations.js?v=6"></script>
+  <script defer src="/js/slider.js?v=6"></script>
+  <script defer src="/js/gallery.js?v=6"></script>
+  <script defer src="/js/main.js?v=6"></script>
 </body>
 </html>
