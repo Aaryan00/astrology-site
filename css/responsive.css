@@ -39,10 +39,12 @@
   .hero-content { max-width: none; margin-inline: auto; }
   .hero-roles { justify-content: center; }
   .btn-row { justify-content: center; }
-  .hero-portrait { order: -1; margin-bottom: 1rem; }
-  .portrait-frame { width: min(80%, 340px); }
+  .hero-portrait { order: -1; margin-bottom: 2.4rem; --pw: min(74vw, 330px); }
   .hero-badge { left: 2%; }
   .scroll-cue { display: none; }
+  /* the portrait mandala carries the animation on small screens;
+     drop the big background wheel so it doesn't clutter the stack */
+  .hero-cosmos { display: none; }
 
   .split, .split.reverse { grid-template-columns: 1fr; direction: ltr; }
   .split-media { max-width: 480px; margin-inline: auto; }
@@ -69,6 +71,8 @@
   .cta-banner .btn-row .btn { width: auto; }
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }
+  /* stack the portrait + badge vertically (badge becomes in-flow here) */
+  .hero-portrait { flex-direction: column; align-items: center; }
   .hero-badge { position: static; margin: 1.2rem auto 0; width: fit-content; }
   .lb-prev { left: 0.5rem; } .lb-next { right: 0.5rem; }
   .fab-wa { width: 52px; height: 52px; right: 1rem; bottom: 1rem; }

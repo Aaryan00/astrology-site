@@ -59,6 +59,47 @@
   to { background-position: 200% center; }
 }
 
+/* ---- Astrology cosmos (hero background wheel) --------------------------- */
+@keyframes cxSpin   { to { transform: rotate(360deg); } }
+@keyframes cxSpinR  { to { transform: rotate(-360deg); } }
+@keyframes cxPulse  { 0%, 100% { opacity: 0.85; } 50% { opacity: 1; } }
+@keyframes cxSweep  { from { transform: translate(-50%, -50%) rotate(0); }
+                      to   { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes cxGlowPulse { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
+@keyframes cxDraw   { 0% { stroke-dashoffset: 900; } 55%, 100% { stroke-dashoffset: 0; } }
+
+/* Portrait mandala: lotus + zodiac aura, energy sweep, orbiting planets */
+.hero-portrait .portrait-cosmos [class*="pc-"] {
+  transform-box: view-box; transform-origin: 250px 250px; will-change: transform;
+}
+.hero-portrait .portrait-cosmos .pc-lotus   { animation: cxSpin  90s  linear infinite; }
+.hero-portrait .portrait-cosmos .pc-lotus2  { animation: cxSpinR 64s  linear infinite; }
+.hero-portrait .portrait-cosmos .pc-zodiac  { animation: cxSpinR 120s linear infinite; }
+.hero-portrait .portrait-cosmos .pc-rays    { animation: cxSpin  150s linear infinite; }
+.hero-portrait .portrait-cosmos .pc-core    { animation: cxGlowPulse 5s ease-in-out infinite; }
+.portrait-sweep { animation: cxSweep 9s linear infinite; }
+.p-orbit.o1 { animation: cxSpin  16s linear infinite; }
+.p-orbit.o2 { animation: cxSpinR 24s linear infinite; }
+.p-orbit.o3 { animation: cxSpin  34s linear infinite; }
+
+/* rotate every ring around the SVG centre (300,300 in view-box units) */
+.hero-cosmos .cx-spin-slow,
+.hero-cosmos .cx-spin-cw,
+.hero-cosmos .cx-spin-ccw,
+.hero-cosmos .cx-orbit {
+  transform-box: view-box;
+  transform-origin: 300px 300px;
+  will-change: transform;
+}
+.hero-cosmos .cx-spin-slow { animation: cxSpin  200s linear infinite; }
+.hero-cosmos .cx-spin-cw   { animation: cxSpin  150s linear infinite; }
+.hero-cosmos .cx-spin-ccw  { animation: cxSpinR 110s linear infinite; }
+.hero-cosmos .cx-orbit-1   { animation: cxSpin   34s linear infinite; }
+.hero-cosmos .cx-orbit-2   { animation: cxSpinR  52s linear infinite; }
+.hero-cosmos .cx-orbit-3   { animation: cxSpin   22s linear infinite; }
+.hero-cosmos .cx-core      { transform-box: view-box; transform-origin: 300px 300px; animation: cxPulse 6s ease-in-out infinite; }
+.hero-cosmos .cx-twinkle   { animation: twinkle 3.4s ease-in-out infinite; }
+
 /* ---- Applied animations ------------------------------------------------- */
 .hero-portrait { animation: floatSlow 7s ease-in-out infinite; }
 .portrait-ring { animation: spinRing 40s linear infinite; }

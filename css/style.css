@@ -322,6 +322,55 @@ section { position: relative; }
   pointer-events: none;
 }
 
+/* ---- Astrology cosmos (animated hero background) ------------------- */
+.hero-cosmos {
+  position: absolute; z-index: 0; pointer-events: none;
+  top: 50%; right: -20%; transform: translateY(-50%);
+  width: min(760px, 62vw); height: auto; aspect-ratio: 1;
+  opacity: 0.38;
+  /* fade the wheel out toward its edges so hero text stays clean */
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 48%, transparent 72%);
+          mask-image: radial-gradient(circle at 50% 50%, #000 48%, transparent 72%);
+}
+
+/* ---- Portrait cosmic aura + energy ring + orbiting planets --------- */
+/* A rotating lotus + zodiac mandala radiating around the portrait, a
+   glowing conic "energy sweep" ring on the image edge, and orbiting
+   Navagraha planets. Anchored to the portrait so it reads well on
+   every screen size (image sits on top). */
+.hero-portrait .portrait-cosmos {
+  position: absolute; z-index: 0; left: 50%; top: 50%;
+  width: calc(var(--pw) * 1.5); aspect-ratio: 1; transform: translate(-50%, -50%);
+  pointer-events: none; opacity: 0.92;
+}
+/* soft rotating light aura behind the portrait (a bright point of
+   energy sweeps around the silhouette — no hard ring across the body) */
+.portrait-sweep {
+  position: absolute; z-index: 0; left: 50%; top: 50%;
+  width: calc(var(--pw) * 1.18); aspect-ratio: 1; transform: translate(-50%, -50%);
+  border-radius: 50%; pointer-events: none;
+  background: conic-gradient(from 0deg,
+      rgba(247,224,138,0) 46%, rgba(247,224,138,0.5) 80%,
+      rgba(255,255,255,0.9) 92%, rgba(247,224,138,0) 100%);
+  filter: blur(24px); opacity: 0.75;
+}
+.portrait-orbits {
+  position: absolute; z-index: 2; left: 50%; top: 50%;
+  width: var(--pw); aspect-ratio: 1; transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.portrait-orbits .p-orbit { position: absolute; inset: 0; border-radius: 50%; }
+.portrait-orbits .p-orbit i {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  border-radius: 50%; display: block;
+}
+.p-orbit.o1 i { top: 2%;  width: 10px; height: 10px; margin-left: -5px;
+  background: #f7e08a; box-shadow: 0 0 12px 2px rgba(247,224,138,0.85); }
+.p-orbit.o2 i { top: -8%; width: 8px;  height: 8px;  margin-left: -4px;
+  background: #ffd9a0; box-shadow: 0 0 12px 2px rgba(255,160,90,0.7); }
+.p-orbit.o3 i { top: -18%; width: 7px; height: 7px;  margin-left: -3.5px;
+  background: #cfe3ff; box-shadow: 0 0 12px 2px rgba(150,190,255,0.7); }
+
 /* ------------------------------------------------------------------ */
 /* 8. HERO                                                            */
 /* ------------------------------------------------------------------ */
@@ -330,6 +379,7 @@ section { position: relative; }
   padding-top: calc(var(--nav-h) + 2rem); padding-bottom: 3rem; overflow: hidden;
 }
 .hero-grid {
+  position: relative; z-index: 2;
   display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: center;
   gap: clamp(2rem, 5vw, 4rem); width: 100%;
 }
@@ -347,14 +397,14 @@ section { position: relative; }
   border-radius: var(--radius-pill); border: 1px solid var(--line);
   color: var(--text); background: var(--glass-bg); backdrop-filter: var(--glass-blur);
 }
-.hero-portrait { position: relative; display: flex; justify-content: center; }
+.hero-portrait { position: relative; display: flex; justify-content: center; --pw: min(100%, 440px); }
 .hero-portrait .halo {
   position: absolute; inset: -6% -6% -6% -6%; border-radius: 50%;
   background: radial-gradient(circle at 50% 40%, rgba(212,175,55,0.35), rgba(91,60,160,0.25) 45%, transparent 70%);
   filter: blur(20px); z-index: 0;
 }
 .portrait-frame {
-  position: relative; z-index: 1; width: min(100%, 440px);
+  position: relative; z-index: 1; width: var(--pw);
   border-radius: 300px 300px 32px 32px; overflow: hidden;
   border: 1px solid var(--line);
   background: linear-gradient(180deg, rgba(91,60,160,0.15), rgba(5,8,28,0.6));

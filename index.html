@@ -45,9 +45,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css?v=6">
-  <link rel="stylesheet" href="/css/responsive.css?v=6">
-  <link rel="stylesheet" href="/css/animations.css?v=6">
+  <link rel="stylesheet" href="/css/style.css?v=10">
+  <link rel="stylesheet" href="/css/responsive.css?v=10">
+  <link rel="stylesheet" href="/css/animations.css?v=10">
 
   <!-- Structured data: WebSite + LocalBusiness + Person + FAQ -->
   <script type="application/ld+json">
@@ -96,6 +96,140 @@
   <main id="main">
     <!-- ============================ HERO ============================ -->
     <section class="hero">
+      <!-- ============ ASTROLOGY COSMOS (animated background) ============ -->
+      <svg class="hero-cosmos" viewBox="0 0 600 600" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="cosmosGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#5b3ca0" stop-opacity="0.55"/>
+            <stop offset="45%" stop-color="#3d2470" stop-opacity="0.22"/>
+            <stop offset="100%" stop-color="#05081c" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="cosmosCore" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#f7e08a" stop-opacity="0.5"/>
+            <stop offset="60%" stop-color="#d4af37" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+          </radialGradient>
+          <!-- one lotus petal, tip pointing up toward the ring edge (r 250-290) -->
+          <path id="cxPetal" d="M300,50 C289,38 289,22 300,10 C311,22 311,38 300,50 Z"/>
+        </defs>
+
+        <!-- soft nebula behind the wheel -->
+        <circle cx="300" cy="300" r="270" fill="url(#cosmosGlow)"/>
+
+        <!-- OUTER LOTUS RING (slow clockwise) — 24 radiant petals -->
+        <g class="cx-spin-slow">
+          <circle cx="300" cy="300" r="292" fill="none" stroke="#d4af37" stroke-opacity="0.14" stroke-width="1"/>
+          <circle cx="300" cy="300" r="258" fill="none" stroke="#d4af37" stroke-opacity="0.10" stroke-width="1"/>
+          <g fill="#d4af37" fill-opacity="0.10" stroke="#f7e08a" stroke-opacity="0.16" stroke-width="0.8">
+            <use href="#cxPetal" transform="rotate(0 300 300)"/><use href="#cxPetal" transform="rotate(15 300 300)"/>
+            <use href="#cxPetal" transform="rotate(30 300 300)"/><use href="#cxPetal" transform="rotate(45 300 300)"/>
+            <use href="#cxPetal" transform="rotate(60 300 300)"/><use href="#cxPetal" transform="rotate(75 300 300)"/>
+            <use href="#cxPetal" transform="rotate(90 300 300)"/><use href="#cxPetal" transform="rotate(105 300 300)"/>
+            <use href="#cxPetal" transform="rotate(120 300 300)"/><use href="#cxPetal" transform="rotate(135 300 300)"/>
+            <use href="#cxPetal" transform="rotate(150 300 300)"/><use href="#cxPetal" transform="rotate(165 300 300)"/>
+            <use href="#cxPetal" transform="rotate(180 300 300)"/><use href="#cxPetal" transform="rotate(195 300 300)"/>
+            <use href="#cxPetal" transform="rotate(210 300 300)"/><use href="#cxPetal" transform="rotate(225 300 300)"/>
+            <use href="#cxPetal" transform="rotate(240 300 300)"/><use href="#cxPetal" transform="rotate(255 300 300)"/>
+            <use href="#cxPetal" transform="rotate(270 300 300)"/><use href="#cxPetal" transform="rotate(285 300 300)"/>
+            <use href="#cxPetal" transform="rotate(300 300 300)"/><use href="#cxPetal" transform="rotate(315 300 300)"/>
+            <use href="#cxPetal" transform="rotate(330 300 300)"/><use href="#cxPetal" transform="rotate(345 300 300)"/>
+          </g>
+        </g>
+
+        <!-- ZODIAC / RASHI RING (clockwise) — 12 signs + house spokes -->
+        <g class="cx-spin-cw">
+          <circle cx="300" cy="300" r="250" fill="none" stroke="#d4af37" stroke-opacity="0.14" stroke-width="1"/>
+          <circle cx="300" cy="300" r="205" fill="none" stroke="#d4af37" stroke-opacity="0.10" stroke-width="1"/>
+          <g stroke="#d4af37" stroke-opacity="0.12" stroke-width="1">
+            <g transform="rotate(15 300 300)"><line x1="300" y1="50" x2="300" y2="95"/></g>
+            <g transform="rotate(45 300 300)"><line x1="300" y1="50" x2="300" y2="95"/></g>
+            <g transform="rotate(75 300 300)"><line x1="300" y1="50" x2="300" y2="95"/></g>
+            <g transform="rotate(105 300 300)"><line x1="300" y1="50" x2="300" y2="95"/></g>
+            <g transform="rotate(135 300 300)"><line x1="300" y1="50" x2="300" y2="95"/></g>
+            <g transform="rotate(165 300 300)"><line x1="300" y1="50" x2="300" y2="95"/></g>
+            <g transform="rotate(195 300 300)"><line x1="300" y1="50" x2="300" y2="95"/></g>
+            <g transform="rotate(225 300 300)"><line x1="300" y1="50" x2="300" y2="95"/></g>
+            <g transform="rotate(255 300 300)"><line x1="300" y1="50" x2="300" y2="95"/></g>
+            <g transform="rotate(285 300 300)"><line x1="300" y1="50" x2="300" y2="95"/></g>
+            <g transform="rotate(315 300 300)"><line x1="300" y1="50" x2="300" y2="95"/></g>
+            <g transform="rotate(345 300 300)"><line x1="300" y1="50" x2="300" y2="95"/></g>
+          </g>
+          <g class="cx-glyph" fill="#f7e08a" text-anchor="middle" dominant-baseline="central" font-size="28">
+            <g transform="rotate(0 300 300)"><text x="300" y="72">&#9800;&#65038;</text></g>
+            <g transform="rotate(30 300 300)"><text x="300" y="72">&#9801;&#65038;</text></g>
+            <g transform="rotate(60 300 300)"><text x="300" y="72">&#9802;&#65038;</text></g>
+            <g transform="rotate(90 300 300)"><text x="300" y="72">&#9803;&#65038;</text></g>
+            <g transform="rotate(120 300 300)"><text x="300" y="72">&#9804;&#65038;</text></g>
+            <g transform="rotate(150 300 300)"><text x="300" y="72">&#9805;&#65038;</text></g>
+            <g transform="rotate(180 300 300)"><text x="300" y="72">&#9806;&#65038;</text></g>
+            <g transform="rotate(210 300 300)"><text x="300" y="72">&#9807;&#65038;</text></g>
+            <g transform="rotate(240 300 300)"><text x="300" y="72">&#9808;&#65038;</text></g>
+            <g transform="rotate(270 300 300)"><text x="300" y="72">&#9809;&#65038;</text></g>
+            <g transform="rotate(300 300 300)"><text x="300" y="72">&#9810;&#65038;</text></g>
+            <g transform="rotate(330 300 300)"><text x="300" y="72">&#9811;&#65038;</text></g>
+          </g>
+        </g>
+
+        <!-- NUMEROLOGY RING (counter-clockwise) — the nine root numbers -->
+        <g class="cx-spin-ccw">
+          <circle cx="300" cy="300" r="186" fill="none" stroke="#7a5fc0" stroke-opacity="0.28" stroke-width="1"/>
+          <circle cx="300" cy="300" r="178" fill="none" stroke="#7a5fc0" stroke-opacity="0.14" stroke-width="1"/>
+          <g class="cx-num" fill="#c9b6ef" text-anchor="middle" dominant-baseline="central" font-size="19" font-family="Playfair Display, serif">
+            <g transform="rotate(0 300 300)"><text x="300" y="132">1</text></g>
+            <g transform="rotate(40 300 300)"><text x="300" y="132">2</text></g>
+            <g transform="rotate(80 300 300)"><text x="300" y="132">3</text></g>
+            <g transform="rotate(120 300 300)"><text x="300" y="132">4</text></g>
+            <g transform="rotate(160 300 300)"><text x="300" y="132">5</text></g>
+            <g transform="rotate(200 300 300)"><text x="300" y="132">6</text></g>
+            <g transform="rotate(240 300 300)"><text x="300" y="132">7</text></g>
+            <g transform="rotate(280 300 300)"><text x="300" y="132">8</text></g>
+            <g transform="rotate(320 300 300)"><text x="300" y="132">9</text></g>
+          </g>
+        </g>
+
+        <!-- NAVAGRAHA ORBITS — planets circling the centre -->
+        <g fill="none" stroke="#d4af37" stroke-opacity="0.10" stroke-width="1">
+          <circle cx="300" cy="300" r="152"/>
+          <circle cx="300" cy="300" r="128"/>
+          <circle cx="300" cy="300" r="108"/>
+        </g>
+        <g class="cx-orbit cx-orbit-1" fill="#f7e08a" text-anchor="middle" dominant-baseline="central" font-size="17">
+          <text x="300" y="148">&#9795;&#65038;</text>
+        </g>
+        <g class="cx-orbit cx-orbit-2" fill="#ffd9a0" text-anchor="middle" dominant-baseline="central" font-size="16">
+          <text x="300" y="172">&#9794;&#65038;</text>
+        </g>
+        <g class="cx-orbit cx-orbit-3" fill="#cfe3ff" text-anchor="middle" dominant-baseline="central" font-size="16">
+          <text x="300" y="192">&#9789;&#65038;</text>
+        </g>
+
+        <!-- CENTRAL SRI YANTRA (Shatkona — interlocking triangles) + bindu + Om -->
+        <g class="cx-core">
+          <circle cx="300" cy="300" r="104" fill="url(#cosmosCore)"/>
+          <circle cx="300" cy="300" r="96" fill="none" stroke="#d4af37" stroke-opacity="0.22" stroke-width="1"/>
+          <g fill="none" stroke="#f7e08a" stroke-opacity="0.34" stroke-width="1.1" stroke-linejoin="round">
+            <polygon points="300,230 360.6,335 239.4,335"/>
+            <polygon points="300,370 360.6,265 239.4,265"/>
+            <polygon points="300,252 341.6,324 258.4,324"/>
+            <polygon points="300,348 341.6,276 258.4,276"/>
+          </g>
+          <text x="300" y="304" text-anchor="middle" dominant-baseline="central" font-size="34" fill="#f7e08a" fill-opacity="0.6" font-family="Tiro Devanagari Hindi, serif">&#2384;</text>
+          <circle cx="300" cy="300" r="3.4" fill="#fff"/>
+        </g>
+
+        <!-- twinkling accent stars -->
+        <g fill="#fff">
+          <circle class="cx-twinkle" cx="118" cy="150" r="1.8" style="animation-delay:0s"/>
+          <circle class="cx-twinkle" cx="470" cy="120" r="2.2" style="animation-delay:1.1s"/>
+          <circle class="cx-twinkle" cx="520" cy="360" r="1.6" style="animation-delay:2.3s"/>
+          <circle class="cx-twinkle" cx="90" cy="420" r="2" style="animation-delay:1.7s"/>
+          <circle class="cx-twinkle" cx="300" cy="60" r="1.7" style="animation-delay:0.6s"/>
+          <circle class="cx-twinkle" cx="150" cy="500" r="1.5" style="animation-delay:2.9s"/>
+          <circle class="cx-twinkle" cx="500" cy="480" r="1.9" style="animation-delay:0.3s"/>
+          <circle class="cx-twinkle" cx="60" cy="290" r="1.6" style="animation-delay:3.4s"/>
+        </g>
+      </svg>
+
       <div class="cosmic-glow" style="width:420px;height:420px;background:radial-gradient(circle,rgba(91,60,160,0.5),transparent 70%);top:-6%;right:6%;" aria-hidden="true"></div>
       <div class="container-wide">
         <div class="hero-grid">
@@ -119,10 +253,83 @@
 
           <div class="hero-portrait anim-in d3">
             <span class="halo" aria-hidden="true"></span>
-            <span class="portrait-ring" aria-hidden="true"></span>
+
+            <!-- Rotating lotus + zodiac mandala radiating around the portrait -->
+            <svg class="portrait-cosmos" viewBox="0 0 500 500" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <path id="pcPetal" d="M250,50 C238,36 238,19 250,5 C262,19 262,36 250,50 Z"/>
+              </defs>
+              <!-- radiant sun rays -->
+              <g class="pc-rays" stroke="#f7e08a" stroke-opacity="0.22" stroke-width="1">
+                <g transform="rotate(0 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(15 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(30 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(45 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(60 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(75 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(90 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(105 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(120 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(135 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(150 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(165 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(180 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(195 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(210 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(225 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(240 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(255 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(270 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(285 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(300 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(315 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(330 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+                <g transform="rotate(345 250 250)"><line x1="250" y1="40" x2="250" y2="16"/></g>
+              </g>
+              <!-- 16-petal lotus -->
+              <g class="pc-lotus" fill="#d4af37" fill-opacity="0.12" stroke="#f7e08a" stroke-opacity="0.20" stroke-width="0.8">
+                <use href="#pcPetal" transform="rotate(0 250 250)"/><use href="#pcPetal" transform="rotate(22.5 250 250)"/>
+                <use href="#pcPetal" transform="rotate(45 250 250)"/><use href="#pcPetal" transform="rotate(67.5 250 250)"/>
+                <use href="#pcPetal" transform="rotate(90 250 250)"/><use href="#pcPetal" transform="rotate(112.5 250 250)"/>
+                <use href="#pcPetal" transform="rotate(135 250 250)"/><use href="#pcPetal" transform="rotate(157.5 250 250)"/>
+                <use href="#pcPetal" transform="rotate(180 250 250)"/><use href="#pcPetal" transform="rotate(202.5 250 250)"/>
+                <use href="#pcPetal" transform="rotate(225 250 250)"/><use href="#pcPetal" transform="rotate(247.5 250 250)"/>
+                <use href="#pcPetal" transform="rotate(270 250 250)"/><use href="#pcPetal" transform="rotate(292.5 250 250)"/>
+                <use href="#pcPetal" transform="rotate(315 250 250)"/><use href="#pcPetal" transform="rotate(337.5 250 250)"/>
+              </g>
+              <!-- zodiac ring -->
+              <g class="pc-zodiac">
+                <circle cx="250" cy="250" r="196" fill="none" stroke="#d4af37" stroke-opacity="0.18" stroke-width="1"/>
+                <g fill="#f7e08a" fill-opacity="0.8" text-anchor="middle" dominant-baseline="central" font-size="22">
+                  <g transform="rotate(0 250 250)"><text x="250" y="54">&#9800;&#65038;</text></g>
+                  <g transform="rotate(30 250 250)"><text x="250" y="54">&#9801;&#65038;</text></g>
+                  <g transform="rotate(60 250 250)"><text x="250" y="54">&#9802;&#65038;</text></g>
+                  <g transform="rotate(90 250 250)"><text x="250" y="54">&#9803;&#65038;</text></g>
+                  <g transform="rotate(120 250 250)"><text x="250" y="54">&#9804;&#65038;</text></g>
+                  <g transform="rotate(150 250 250)"><text x="250" y="54">&#9805;&#65038;</text></g>
+                  <g transform="rotate(180 250 250)"><text x="250" y="54">&#9806;&#65038;</text></g>
+                  <g transform="rotate(210 250 250)"><text x="250" y="54">&#9807;&#65038;</text></g>
+                  <g transform="rotate(240 250 250)"><text x="250" y="54">&#9808;&#65038;</text></g>
+                  <g transform="rotate(270 250 250)"><text x="250" y="54">&#9809;&#65038;</text></g>
+                  <g transform="rotate(300 250 250)"><text x="250" y="54">&#9810;&#65038;</text></g>
+                  <g transform="rotate(330 250 250)"><text x="250" y="54">&#9811;&#65038;</text></g>
+                </g>
+              </g>
+            </svg>
+
             <div class="portrait-frame">
               <img src="/images/profile/amit-agarwal-standing.jpeg" alt="Portrait of Shri Shri Amit Agarwal, Celebrity Astrologer and Vastu Consultant" width="688" height="1528" fetchpriority="high">
             </div>
+
+            <!-- glowing conic energy-sweep ring on the image edge -->
+            <span class="portrait-sweep" aria-hidden="true"></span>
+            <!-- orbiting Navagraha planets -->
+            <span class="portrait-orbits" aria-hidden="true">
+              <span class="p-orbit o1"><i></i></span>
+              <span class="p-orbit o2"><i></i></span>
+              <span class="p-orbit o3"><i></i></span>
+            </span>
+
             <div class="hero-badge">
               <div>
                 <div class="stars" aria-hidden="true">★★★★★</div>
