@@ -1,0 +1,4 @@
+# ads.txt — Authorized Digital Sellers (IAB Tech Lab specification)
+# This website does not sell programmatic advertising inventory.
+# No third-party advertising system is authorized to sell ads on this domain.
+# Contact: contact@shrishriamit.com
