@@ -363,6 +363,9 @@
       lines.push(`*Message:* ${message}`);
       const text = encodeURIComponent(lines.join('\n'));
       window.open(`https://wa.me/${P.whatsapp}?text=${text}`, '_blank', 'noopener');
+      // GA4 conversion: fired only after validation passes. No PII sent —
+      // only the (optional) service interest, never name / phone / email.
+      if (window.gtag) gtag('event', 'contact_form_submit', { service: service || 'unspecified' });
       status.className = 'form-status ok';
       status.textContent = 'Thank you! Your WhatsApp is opening with your details pre-filled. If it does not, please call us directly.';
       form.reset();
@@ -380,11 +383,32 @@
   }
 
   /* ------------------------------------------------------------------ */
+  /* ANALYTICS EVENTS — track lead intent (GA4). No PII is ever sent.   */
+  /* One delegated listener covers the FAB, every [data-wa] button and  */
+  /* any wa.me / tel: / mailto: link (current or injected later).       */
+  /* ------------------------------------------------------------------ */
+  function initEventTracking() {
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a'); if (!a || !window.gtag) return;
+      const href = a.getAttribute('href') || '';
+      const where = a.getAttribute('aria-label') || (a.textContent || '').trim().slice(0, 40) || 'link';
+      if (href.indexOf('wa.me') > -1 || href.indexOf('api.whatsapp.com') > -1) {
+        gtag('event', 'whatsapp_click', { link_location: where });
+      } else if (href.indexOf('tel:') === 0) {
+        gtag('event', 'phone_click', { link_location: where });
+      } else if (href.indexOf('mailto:') === 0) {
+        gtag('event', 'email_click', { link_location: where });
+      }
+    });
+  }
+
+  /* ------------------------------------------------------------------ */
   /* BOOT                                                               */
   /* ------------------------------------------------------------------ */
   function boot() {
     initChrome();
     wireWhatsapp();
+    initEventTracking();
 
     // Page-scoped data rendering (guards check element existence)
     renderStats('stats-row', D.stats);
