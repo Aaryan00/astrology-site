@@ -1,0 +1,14 @@
+# Files Wrangler must NOT upload as Cloudflare Worker static assets.
+# The assets directory is the repo root ("."), so exclude repo/dev files.
+# Patterns use .gitignore syntax.
+.git
+.gitignore
+.assetsignore
+.DS_Store
+node_modules
+.wrangler
+wrangler.jsonc
+wrangler.toml
+README.md
+serve.py
+*.log
