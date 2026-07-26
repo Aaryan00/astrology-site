@@ -15,7 +15,7 @@
     const filtersHost = document.getElementById('gallery-filters');
     const cats = ['all', ...Array.from(new Set(items.map(i => i.cat)))];
     if (filtersHost) {
-      const label = { all: 'All', awards: 'Awards', events: 'Events', vastu: 'Vastu', media: 'Media' };
+      const label = { all: 'All', celebrities: 'Celebrities', awards: 'Awards', events: 'Events', vastu: 'Vastu', media: 'Media' };
       filtersHost.innerHTML = cats.map((c, i) =>
         `<button class="filter-btn${i === 0 ? ' active' : ''}" data-filter="${c}">${label[c] || c}</button>`).join('');
     }
