@@ -172,20 +172,52 @@ window.SITE_DATA = {
     { name: 'Harshit Agarwal',       role: 'Google Review', rating: 5, source: 'Google', text: 'Most accurate palm reading — highly recommended.' }
   ],
 
-  /* ---- Gallery items (replace `img` with real photos in /images/gallery) */
+  /* ---- Gallery items. `caption` is also used as the image alt text (see js/gallery.js). */
   gallery: [
-    { img: 'images/gallery/g1.svg',  cat: 'awards',   caption: 'Durga Swarupa Samman Felicitation' },
-    { img: 'images/gallery/g2.svg',  cat: 'events',   caption: 'Rotary Club Kanpur Global Charter' },
-    { img: 'images/gallery/g3.svg',  cat: 'awards',   caption: 'Icon of India Award' },
-    { img: 'images/gallery/g4.svg',  cat: 'vastu',    caption: 'Cricket Stadium Vastu Guidance' },
-    { img: 'images/gallery/g5.svg',  cat: 'events',   caption: 'Motivational Speaking Session' },
-    { img: 'images/gallery/g6.svg',  cat: 'awards',   caption: 'National Pride & Excellence Award' },
-    { img: 'images/gallery/g7.svg',  cat: 'media',    caption: 'Press & Media Feature' },
-    { img: 'images/gallery/g8.svg',  cat: 'events',   caption: 'Community Service Initiative' },
-    { img: 'images/gallery/g9.svg',  cat: 'vastu',    caption: 'Corporate Vastu Consultation' },
-    { img: 'images/gallery/g10.svg', cat: 'media',    caption: 'Television Interview' },
-    { img: 'images/gallery/g11.svg', cat: 'awards',   caption: 'Best Rotary President Award' },
-    { img: 'images/gallery/g12.svg', cat: 'events',   caption: 'Spiritual Discourse Gathering' }
+    /* ----- Awards & honours ----- */
+    { img: '/images/gallery/durga-swaroopa-samman-2025-felicitation-lucknow.jpg', cat: 'awards', caption: 'Durga Swaroopa Samman 2025 felicitation of celebrity astrologer Amit Agarwal at Urdu Akademi, Lucknow' },
+    { img: '/images/gallery/amit-agarwal-durga-swaroopa-foundation-award-trophy.jpg', cat: 'awards', caption: 'Shri Shri Amit Agarwal with the Durga Swaroopa Foundation award trophy at the felicitation ceremony' },
+    { img: '/images/gallery/durga-swaroopa-samman-2025-honour-poster-amit-agarwal.jpg', cat: 'awards', caption: 'Durga Swaroopa Samman 2025 honour poster for celebrity astrologer Shri Shri Amit Agarwal' },
+    { img: '/images/gallery/icons-of-bharat-award-2025-certificate-amit-agarwal.jpg', cat: 'awards', caption: 'Icons of Bharat Award 2025 certificate presented to Shri Shri Amit Agarwal, celebrity astrologer and Vastu consultant' },
+    { img: '/images/gallery/amit-agarwal-icons-of-bharat-award-kanpur-kavi-sammelan.jpg', cat: 'awards', caption: 'Shri Shri Amit Agarwal receiving the Icons of Bharat Award 2025 at the National Kavi Sammelan, Merchant Chamber, Kanpur' },
+    { img: '/images/gallery/national-pride-and-excellence-award-2026-amit-agarwal.jpg', cat: 'awards', caption: 'National Pride and Excellence Award 2026 presented to Shri Shri Amit Agarwal on Republic Day by Tretayug Foundation' },
+    { img: '/images/gallery/rotary-governors-excellence-award-2024-amit-agarwal.jpg', cat: 'awards', caption: "Rotary District 3110 Governor's Excellence Award 2024 for Rtn. Amit Agarwal, President of Rotary Club of Kanpur Global" },
+    { img: '/images/gallery/rotary-club-kanpur-global-district-recognition-award.jpg', cat: 'awards', caption: 'Rotary Club of Kanpur Global receiving a district recognition award, Rotary District 3110' },
+    { img: '/images/gallery/amit-agarwal-rotary-district-award-ceremony-trophy.jpg', cat: 'awards', caption: 'Rtn. Amit Agarwal with the trophy at the Rotary District Award Ceremony, Kanpur' },
+
+    /* ----- Events & community ----- */
+    { img: '/images/gallery/amit-agarwal-networking-meet-kanpur.jpg', cat: 'events', caption: 'Shri Shri Amit Agarwal with associates at a networking meet in Kanpur' },
+    { img: '/images/gallery/amit-agarwal-with-nidhipati-singhania-jk-cement-upca-president.jpg', cat: 'events', caption: 'Shri Shri Amit Agarwal with renowned industrialist Shri Nidhipati Singhania, Chairman of J.K. Cement and President of the Uttar Pradesh Cricket Association' },
+    { img: '/images/gallery/amit-agarwal-with-actor-nawazuddin-siddiqui.jpg', cat: 'events', caption: 'Shri Shri Amit Agarwal with Bollywood actor Nawazuddin Siddiqui' },
+    { img: '/images/gallery/amit-agarwal-with-director-vishal-ranjan-mishra-and-nawazuddin-siddiqui.jpg', cat: 'events', caption: 'Shri Shri Amit Agarwal with film director Vishal Ranjan Mishra and actor Nawazuddin Siddiqui' },
+    { img: '/images/gallery/amit-agarwal-with-film-personality.jpg', cat: 'events', caption: 'Shri Shri Amit Agarwal with a film personality' },
+    { img: '/images/gallery/amit-agarwal-with-producer-khyati-madaan-director-vishal-ranjan-mishra.jpg', cat: 'events', caption: 'Shri Shri Amit Agarwal with Khyati Madaan, owner and producer of Not Out Entertainment, and film director Vishal Ranjan Mishra' },
+    { img: '/images/gallery/amit-agarwal-welcoming-celebrity-guest-event.jpg', cat: 'events', caption: 'Shri Shri Amit Agarwal welcoming a celebrity guest at an event' },
+    { img: '/images/gallery/amit-agarwal-with-ranji-trophy-cricketer.jpg', cat: 'events', caption: 'Shri Shri Amit Agarwal with a Ranji Trophy cricketer on the ground' },
+    { img: '/images/gallery/amit-agarwal-felicitates-senior-police-officer.jpg', cat: 'events', caption: 'Shri Shri Amit Agarwal presenting a bouquet to a senior police officer' },
+    { img: '/images/gallery/amit-agarwal-meets-kanpur-police-commissioner.jpg', cat: 'events', caption: 'Shri Shri Amit Agarwal felicitating the Kanpur Police Commissioner' },
+    { img: '/images/gallery/rotary-kanpur-green-felicitates-mla-mahesh-trivedi.jpg', cat: 'events', caption: 'Rotary Club Kanpur Green felicitating MLA Mahesh Trivedi at a mega blood donation camp' },
+    { img: '/images/gallery/amit-agarwal-samajik-adhikarita-shivir-kanpur.jpg', cat: 'events', caption: 'Samajik Adhikarita Shivir assistive-device distribution camp with MP Satyadev Pachauri, Lajpat Bhawan, Kanpur' },
+    { img: '/images/gallery/amit-agarwal-rotary-kanya-shree-cycle-donation.jpg', cat: 'events', caption: 'Rtn. Amit Agarwal receiving a Certificate of Appreciation for the Rotary Kanya Shree cycle-donation project' },
+    { img: '/images/gallery/amit-agarwal-amar-ujala-kavya-rang-kanpur.jpg', cat: 'events', caption: 'Amar Ujala Kavya Rang cultural event in Kanpur' },
+    { img: '/images/gallery/amit-agarwal-with-mla-amitabh-bajpai-film-star-rauni-shah.jpg', cat: 'events', caption: 'Shri Shri Amit Agarwal with local MLA Amitabh Bajpai and film star Rauni Shah at his residence' },
+    { img: '/images/gallery/matri-diwas-brahma-kumaris-dance-performance-kanpur.jpg', cat: 'events', caption: 'Cultural dance performance at the Matri Diwas (Mother\'s Day) celebration, Brahma Kumaris, Kanpur' },
+    { img: '/images/gallery/matri-diwas-brahma-kumaris-dignitaries-kanpur.jpg', cat: 'events', caption: 'Dignitaries at the Matri Diwas celebration honouring mothers, Brahma Kumaris, Kanpur' },
+    { img: '/images/gallery/matri-diwas-brahma-kumaris-audience-kanpur.jpg', cat: 'events', caption: 'Audience at the Matri Diwas (Mother\'s Day) event, Brahma Kumaris, Kanpur' },
+    { img: '/images/gallery/matri-diwas-brahma-kumaris-lamp-lighting-kanpur.jpg', cat: 'events', caption: 'Guests on stage at the Matri Diwas celebration, Brahma Kumaris, Kanpur' },
+    { img: '/images/gallery/amit-agarwal-addressing-matri-diwas-kanpur.jpg', cat: 'events', caption: 'Shri Shri Amit Agarwal addressing the Matri Diwas (Mother\'s Day) gathering, Kanpur' },
+    { img: '/images/gallery/amit-agarwal-matri-diwas-family-photo-kanpur.jpg', cat: 'events', caption: 'Shri Shri Amit Agarwal honouring an elderly mother at the Matri Diwas event, Kanpur' },
+    { img: '/images/gallery/matri-diwas-brahma-kumaris-candle-lighting-kanpur.jpg', cat: 'events', caption: 'Candle-lighting ceremony at the Matri Diwas celebration, Brahma Kumaris, Kanpur' },
+
+    /* ----- Press & media ----- */
+    { img: '/images/gallery/amit-agarwal-durga-swaroopa-award-amar-ujala-news.jpg', cat: 'media', caption: 'Amar Ujala newspaper coverage: Vastu expert Amit Agarwal honoured with the Durga Swaroopa Award' },
+    { img: '/images/gallery/amit-agarwal-durga-swaroopa-award-tc-news-india.jpg', cat: 'media', caption: 'TC News India feature: Shri Shri Amit Agarwal honoured with the Durga Swaroopa Samman by Deputy CM Brajesh Pathak' },
+    { img: '/images/gallery/amit-agarwal-durga-swaroopa-award-newspaper-report.jpg', cat: 'media', caption: 'Newspaper report: Astrologer Amit Agarwal receives the Durga Swaroopa Award' },
+    { img: '/images/gallery/amit-agarwal-durga-swaroopa-award-press-coverage.jpg', cat: 'media', caption: 'Press coverage of Shri Shri Amit Agarwal\'s Durga Swaroopa Award felicitation' },
+    { img: '/images/gallery/amit-agarwal-tc-news-india-feature-kanpur.jpg', cat: 'media', caption: 'TC News India feature on celebrity astrologer and Vastu expert Shri Shri Amit Agarwal of Kanpur' },
+    { img: '/images/gallery/gopal-krishna-singhania-cricket-stadium-vastu-news.jpg', cat: 'media', caption: 'Newspaper report on the Gopal Krishna Singhania Railway Cricket Stadium noting Amit Agarwal\'s Vastu contribution' },
+    { img: '/images/gallery/amit-agarwal-jyotish-vastu-samajseva-newspaper-profile.jpg', cat: 'media', caption: 'Newspaper profile: Shri Shri Amit Agarwal, an inspiring personality in astrology, Vastu and social service' },
+    { img: '/images/gallery/matri-diwas-event-newspaper-coverage-pratibha-shukla.jpg', cat: 'media', caption: 'Newspaper coverage of the Matri Diwas event honouring mothers, with Pratibha Shukla' }
   ],
 
   /* ---- Video items (replace `id` with real YouTube video IDs) ---------- */

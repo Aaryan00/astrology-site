@@ -335,6 +335,7 @@
       const service = (data.get('service') || '').toString().trim();
       const dob = (data.get('dob') || '').toString().trim();
       const tob = (data.get('tob') || '').toString().trim();
+      const pob = (data.get('pob') || '').toString().trim();
       const utr = (data.get('utr') || '').toString().trim();
       const message = (data.get('message') || '').toString().trim();
 
@@ -358,6 +359,7 @@
       if (email) lines.push(`*Email:* ${email}`);
       if (dob) lines.push(`*Date of Birth:* ${dob}`);
       if (tob) lines.push(`*Time of Birth:* ${tob}`);
+      if (pob) lines.push(`*Place of Birth:* ${pob}`);
       if (service) lines.push(`*Interested in:* ${service}`);
       if (utr) lines.push(`*UTR / Payment Ref:* ${utr}`);
       lines.push(`*Message:* ${message}`);
