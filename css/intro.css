@@ -1,0 +1,183 @@
+/* ============================================================================
+ * intro.css — "Cosmic Genesis" first-visit cinematic intro overlay
+ * Self-contained, CSP-safe (no external assets). Hidden by default; shown only
+ * when intro.js adds .intro-active to <html> (so returning visitors get no flash).
+ * ==========================================================================*/
+:root {
+  --ci-gold: #e8c66b;
+  --ci-gold-deep: #c99a3a;
+  --ci-ink: #05070f;
+}
+
+#cosmic-intro { display: none; }
+
+html.intro-active #cosmic-intro {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  background: #05070f;
+  overflow: hidden;
+  opacity: 1;
+  will-change: opacity, transform;
+  contain: strict;
+}
+html.intro-active,
+html.intro-active body { overflow: hidden !important; height: 100%; }
+
+#cosmic-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Focus scrim: subdues the nebula on arrival so the gold geometry + wordmark read */
+.ci-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+  background: radial-gradient(circle at 50% 46%,
+    rgba(5, 7, 15, 0.42) 0%, rgba(5, 7, 15, 0.72) 68%, rgba(3, 4, 10, 0.92) 100%);
+}
+
+/* --- Centre stage: sacred geometry + wordmark ------------------------------ */
+.ci-stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.ci-geo {
+  position: relative;
+  width: min(60vmin, 480px);
+  height: min(60vmin, 480px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ci-yantra {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  opacity: 0;
+  transition: opacity 1.1s ease;
+}
+.ci-yantra path,
+.ci-yantra circle,
+.ci-yantra polygon {
+  fill: none;
+  stroke: var(--ci-gold);
+  stroke-width: 1.7;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 6px rgba(232, 198, 107, 0.75)) drop-shadow(0 0 15px rgba(232, 198, 107, 0.35));
+}
+
+.ci-om {
+  position: relative;
+  font-family: "Playfair Display", Georgia, serif;
+  color: var(--ci-gold);
+  font-size: min(15vmin, 120px);
+  line-height: 1;
+  opacity: 0;
+  transform: scale(0.55);
+  transition: opacity 0.9s ease, transform 1s cubic-bezier(0.2, 0.9, 0.3, 1);
+  text-shadow: 0 0 26px rgba(232, 198, 107, 0.65), 0 0 60px rgba(232, 198, 107, 0.3);
+}
+
+.ci-title {
+  position: absolute;
+  bottom: 12%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+.ci-name {
+  display: block;
+  font-family: "Playfair Display", Georgia, serif;
+  color: #fff;
+  font-size: clamp(1.5rem, 4.6vw, 2.7rem);
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 24px rgba(232, 198, 107, 0.5), 0 2px 20px rgba(0, 0, 0, 0.65);
+}
+.ci-tag {
+  display: block;
+  margin-top: 0.7rem;
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 300;
+  color: var(--ci-gold);
+  font-size: clamp(0.82rem, 2.1vw, 1.05rem);
+  letter-spacing: 0.24em;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* --- Skip control ---------------------------------------------------------- */
+.ci-skip {
+  position: absolute;
+  right: clamp(1rem, 4vw, 2.4rem);
+  bottom: clamp(1rem, 4vw, 2.2rem);
+  z-index: 2;
+  pointer-events: auto;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(232, 198, 107, 0.32);
+  color: rgba(255, 255, 255, 0.72);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.15rem;
+  border-radius: 2rem;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease, opacity 0.8s ease;
+}
+html.intro-active .ci-skip { opacity: 1; transition-delay: 1.4s; }
+.ci-skip:hover {
+  color: #fff;
+  border-color: var(--ci-gold);
+  background: rgba(232, 198, 107, 0.12);
+}
+
+/* --- Exit: TRUE crossfade — the page glows IN while the intro dims OUT ------ */
+/* While the intro plays, the real page is held hidden underneath so that on
+   exit it can fade in from black at the exact moment the overlay fades out —
+   the two cross over each other instead of one simply uncovering the other. */
+html.intro-active body > :not(#cosmic-intro):not(script):not(style) { opacity: 0; }
+html.intro-active.intro-reveal body > :not(#cosmic-intro):not(script):not(style) {
+  opacity: 1;
+  transition: opacity 1.5s ease;
+}
+
+/* The cosmos canvas recedes a touch faster so the crossfade stays clean. */
+#cosmic-canvas { transition: opacity 0.95s ease; }
+#cosmic-intro.ci-dim #cosmic-canvas { opacity: 0; }
+
+/* The whole intro dims out on the same clock as the page glowing up. */
+#cosmic-intro.ci-exit {
+  transition: opacity 1.5s ease, transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: scale(1.02);
+}
+
+/* --- Reduced motion: no WebGL, no big motion, calm static reveal ----------- */
+@media (prefers-reduced-motion: reduce) {
+  #cosmic-canvas {
+    background: radial-gradient(circle at 50% 45%, #1a1636 0%, #0a0e27 55%, #05070f 100%);
+  }
+  html.intro-active .ci-skip { transition-delay: 0s; }
+}
