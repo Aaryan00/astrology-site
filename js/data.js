@@ -92,12 +92,12 @@ window.SITE_DATA = {
     {
       id: 'marriage', name: 'Marriage Matching', featured: false,
       category: 'consultation', badge: 'Kundali Milan',
-      summary: 'Ashtakoot Guna Milan with palmistry & face reading for lifelong marital bliss.',
+      summary: 'A detailed pre-marital consultation that combines Ashtakoot Guna Milan, individual horoscope analysis, palmistry and face reading to assess the emotional, mental, personal and long-term compatibility between two people — a holistic approach that goes beyond traditional matchmaking to help both individuals understand each other and build a stronger foundation for a happy, balanced and lasting relationship.',
       tiers: [
-        { label: '45 Minutes · Over Phone', price: '₹36,000', unit: '' },
-        { label: '75 Minutes · Over Phone', price: '₹51,000', unit: '' }
+        { label: 'Matchmaking Consultation · 30 Min (incl. GST)', price: '₹36,000', unit: '' },
+        { label: 'Detailed Matchmaking · 60 Min (incl. GST)',     price: '₹60,000', unit: '' }
       ],
-      features: ['36 Guna Kundali matching', 'Nature & compatibility study', 'Palmistry & face reading', 'Guidance for a harmonious life']
+      features: ['Kundali Milan & compatibility analysis', 'Detailed study of both horoscopes', 'Insights into nature, emotions, love & understanding', 'Strengths, challenges & areas to nurture in married life', 'Palmistry & face reading for deeper compatibility', 'Practical guidance for long-term harmony']
     },
     {
       id: 'social', name: 'Social Service Package', featured: false,
