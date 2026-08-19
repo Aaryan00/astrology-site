@@ -17,7 +17,7 @@ window.SITE_DATA = {
     tagline: 'विश्वास, अनुभव और दिव्य मार्गदर्शन',
     taglineEn: 'Faith, Experience & Divine Guidance',
     location: 'Kanpur, Uttar Pradesh, India',
-    phones: ['+91 93363 33207', '+91 70190 01990'],
+    phones: ['+91 93363 33207'],
     whatsapp: '919336333207',
     emails: ['contact@shrishriamit.com'],
     social: {
@@ -70,7 +70,7 @@ window.SITE_DATA = {
       features: ['Complete Vedic horoscope study', 'Palmistry & face reading', 'Business, career & relationship insight', 'Practical remedies']
     },
     {
-      id: 'personal', name: 'Personal Meeting', featured: true,
+      id: 'personal', name: 'Personal Meeting', featured: false,
       category: 'consultation', badge: 'In-Person',
       summary: 'Face-to-face holistic consultation with tailored remedies in Kanpur.',
       tiers: [
@@ -80,7 +80,7 @@ window.SITE_DATA = {
       features: ['In-person combined analysis', 'Life chart & horoscope reading', 'Palmistry, face & Vedic astrology', 'Recommended practical remedies']
     },
     {
-      id: 'video', name: 'Video / Phone Consultation', featured: false,
+      id: 'video', name: 'Video / Phone Consultation', featured: true,
       category: 'consultation', badge: 'Remote',
       summary: 'Complete analysis over phone or video call from anywhere in the world.',
       tiers: [
