@@ -6,8 +6,10 @@
 /* ---- <= 1100px ---------------------------------------------------------- */
 @media (max-width: 1100px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  /* 5 footer columns are too many below this width: brand + 2 link columns on
+     row 1, then Get in Touch (wide) + Important Links on row 2. */
   .footer-top { grid-template-columns: 1.4fr 1fr 1fr; }
-  .footer-contact { grid-column: 1 / -1; }
+  .footer-contact { grid-column: span 2; }
   .hero-grid { gap: 2.5rem; }
 }
 

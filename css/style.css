@@ -691,7 +691,7 @@ section { position: relative; }
 /* ------------------------------------------------------------------ */
 .site-footer { position: relative; margin-top: var(--section-y); border-top: 1px solid var(--line-soft);
   background: linear-gradient(180deg, transparent, rgba(5,8,28,0.6)); }
-.footer-top { padding-block: clamp(3rem, 5vw, 4.5rem); display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 2.5rem; }
+.footer-top { padding-block: clamp(3rem, 5vw, 4.5rem); display: grid; grid-template-columns: 1.5fr 0.9fr 0.95fr 1.2fr 1.15fr; gap: 2rem; }
 .footer-brand p { font-size: 0.92rem; margin: 1rem 0; max-width: 34ch; }
 .footer-col h5 { font-family: var(--font-display); font-size: 1.1rem; color: var(--soft-white); margin-bottom: 1.1rem; }
 .footer-col ul { display: grid; gap: 0.6rem; }
