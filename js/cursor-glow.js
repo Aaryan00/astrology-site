@@ -1,12 +1,13 @@
 /* ============================================================================
  * cursor-glow.js — soft gold cursor light + rising bubble trail
- * Desktop / fine-pointer only; respects prefers-reduced-motion.
- * Pure canvas, no external assets — CSP-safe.
+ * Mouse: follows the pointer while it moves. Touch: follows the finger while
+ * dragging, and glows briefly at a tap before fading. Respects
+ * prefers-reduced-motion. Pure canvas, no external assets — CSP-safe.
  * ==========================================================================*/
 (function () {
   'use strict';
-  if (window.matchMedia('(pointer: coarse)').matches) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const isTouch = window.matchMedia('(pointer: coarse)').matches;
 
   const canvas = document.createElement('canvas');
   canvas.id = 'cursor-fx';
@@ -30,13 +31,9 @@
 
   let mx = -999, my = -999, lx = -999, ly = -999;
   let active = false;
-  addEventListener('pointermove', (e) => {
-    mx = e.clientX; my = e.clientY; active = true;
-  }, { passive: true });
-  addEventListener('pointerleave', () => { active = false; });
-  document.addEventListener('mouseout', (e) => { if (!e.relatedTarget) active = false; });
+  let fadeTimer = null;
 
-  /* ---- rising bubbles, spawned as the pointer travels ---- */
+  /* ---- rising bubbles, spawned as the pointer/finger travels ---- */
   const bubbles = [];
   const MAX_BUBBLES = 60;
   function spawnBubble(x, y) {
@@ -54,6 +51,37 @@
 
   let travelled = 0;
   let px = mx, py = my;
+
+  function setPoint(x, y) {
+    if (!active) { px = x; py = y; lx = x; ly = y; }
+    mx = x; my = y; active = true;
+    if (fadeTimer) { clearTimeout(fadeTimer); fadeTimer = null; }
+  }
+
+  if (isTouch) {
+    addEventListener('touchstart', (e) => {
+      const t = e.touches[0];
+      if (!t) return;
+      setPoint(t.clientX, t.clientY);
+      for (let i = 0; i < 6; i++) spawnBubble(t.clientX, t.clientY);
+    }, { passive: true });
+    addEventListener('touchmove', (e) => {
+      const t = e.touches[0];
+      if (!t) return;
+      setPoint(t.clientX, t.clientY);
+    }, { passive: true });
+    const release = () => {
+      fadeTimer = setTimeout(() => { active = false; }, 350);
+    };
+    addEventListener('touchend', release, { passive: true });
+    addEventListener('touchcancel', release, { passive: true });
+  } else {
+    addEventListener('pointermove', (e) => {
+      mx = e.clientX; my = e.clientY; active = true;
+    }, { passive: true });
+    addEventListener('pointerleave', () => { active = false; });
+    document.addEventListener('mouseout', (e) => { if (!e.relatedTarget) active = false; });
+  }
 
   function frame() {
     ctx.clearRect(0, 0, innerWidth, innerHeight);
@@ -74,7 +102,7 @@
       }
     }
 
-    // soft glow at the cursor
+    // soft glow at the cursor/finger
     if (active) {
       const g = ctx.createRadialGradient(lx, ly, 0, lx, ly, 26);
       g.addColorStop(0, 'rgba(247, 224, 138, 0.55)');
