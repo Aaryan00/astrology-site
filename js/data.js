@@ -185,6 +185,7 @@ window.SITE_DATA = {
     { img: "/images/gallery/amit-agarwal-with-producer-khyati-madaan-director-vishal-ranjan-mishra.jpg", cat: "celebrities", caption: "Shri Shri Amit Agarwal with Khyati Madaan, owner and producer of Not Out Entertainment, and film director Vishal Ranjan Mishra" },
 
     /* ----- Awards & honours ----- */
+    { img: "/images/gallery/rashtriya-jyotish-gaurav-samman-2026-certificate-amit-agarwal.jpg", cat: "awards", caption: "Rashtriya Jyotish Gaurav Samman 2026 — Certificate of Honour presented to Shri Shri Amit Agarwal, Celebrity Astrologer & Vastu Consultant, by Jivran Foundation" },
     { img: "/images/gallery/durga-swaroopa-samman-2025-felicitation-lucknow.jpg", cat: "awards", caption: "Durga Swaroopa Samman 2025 felicitation of celebrity astrologer Amit Agarwal at Urdu Akademi, Lucknow" },
     { img: "/images/gallery/amit-agarwal-durga-swaroopa-foundation-award-trophy.jpg", cat: "awards", caption: "Shri Shri Amit Agarwal with the Durga Swaroopa Foundation award trophy at the felicitation ceremony" },
     { img: "/images/gallery/durga-swaroopa-samman-2025-honour-poster-amit-agarwal.jpg", cat: "awards", caption: "Durga Swaroopa Samman 2025 honour poster for celebrity astrologer Shri Shri Amit Agarwal" },
@@ -242,6 +243,7 @@ window.SITE_DATA = {
 
   /* ---- Awards & recognitions (About + Home) ---------------------------- */
   awards: [
+    { title: 'Rashtriya Jyotish Gaurav Samman 2026', desc: 'Certificate of Honour from Jivran Foundation for dedicated contribution to Astrology and Vastu.' },
     { title: 'Durga Swarupa Samman',            desc: 'For exceptional contributions to spiritual welfare and society.' },
     { title: 'Icon of India Award',             desc: 'For exemplary leadership and mastery over the Vedic sciences.' },
     { title: 'National Pride & Excellence',     desc: 'Recognised nationally for institutional and professional brilliance.' },
