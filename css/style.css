@@ -922,3 +922,12 @@ section { position: relative; }
 
 /* noscript nav fallback */
 .noscript-note { background: var(--purple-700); color: var(--soft-white); text-align: center; padding: 0.6rem; font-size: 0.9rem; }
+
+/* Blog card (image + title, whole card is a link) */
+.blog-card { display: flex; flex-direction: column; padding: 0; overflow: hidden; color: inherit; text-decoration: none; }
+.blog-media { aspect-ratio: 16 / 10; background: var(--grad-purple); overflow: hidden; }
+.blog-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform var(--dur) var(--ease); }
+.blog-card:hover .blog-media img { transform: scale(1.05); }
+.blog-title { padding: 1.1rem 1.3rem 1.4rem; font-size: 1.1rem; color: var(--soft-white); line-height: 1.4; }
+.blog-card:hover .blog-title { color: var(--gold-400); }
+.blog-status { grid-column: 1 / -1; text-align: center; color: var(--text-muted); }

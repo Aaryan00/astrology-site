@@ -6,16 +6,29 @@
   <!-- Google Analytics 4 (gtag) — config self-hosted in /js/analytics.js -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GWDX9YK5P0"></script>
   <script src="/js/analytics.js?v=11"></script>
-  <title>Page Not Found (404) — Shri Amit Agarwal</title>
-  <meta name="description" content="The page you are looking for could not be found. Explore astrology, Vastu and consultation services by Shri Shri Amit Agarwal.">
-  <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://shrishriamit.com/404.html">
+  <title>Blog — Astrology &amp; Vastu Articles | Shri Shri Amit Agarwal</title>
+  <meta name="description" content="Read the latest articles and write-ups by celebrity astrologer Shri Shri Amit Agarwal on Vedic astrology, Vastu, gemstones and purposeful living.">
+  <link rel="canonical" href="https://shrishriamit.com/blog/">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#0a0e27">
+  <meta name="geo.region" content="IN-UP">
+  <meta name="geo.placename" content="Kanpur, Uttar Pradesh, India">
+  <meta name="geo.position" content="26.4499;80.3319">
+  <meta name="ICBM" content="26.4499, 80.3319">
+  <meta name="format-detection" content="telephone=yes">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog — Shri Shri Amit Agarwal">
+  <meta property="og:description" content="Articles and insights on astrology and Vastu.">
+  <meta property="og:image" content="https://shrishriamit.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Shri Shri Amit Agarwal — Celebrity Astrologer & Vastu Consultant, Kanpur">
+  <meta name="twitter:card" content="summary_large_image">
   <!-- Fonts (self-hosted, non render-blocking) -->
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/fonts/playfair-display-700-latin.woff2" crossorigin>
@@ -23,8 +36,12 @@
   <link rel="stylesheet" href="/css/style.css?v=13">
   <link rel="stylesheet" href="/css/responsive.css?v=12">
   <link rel="stylesheet" href="/css/animations.css?v=11">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shrishriamit.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://shrishriamit.com/blog/"}]}
+  </script>
 </head>
-<body data-page="404">
+<body data-page="blog">
   <a class="skip-link" href="#main">Skip to main content</a>
   <div class="starfield" aria-hidden="true"></div>
   <canvas id="stars-canvas" aria-hidden="true"></canvas>
@@ -56,31 +73,36 @@
   </header>
 
   <main id="main">
-    <section class="hero" style="min-height:78vh;">
-      <div class="cosmic-glow" style="width:420px;height:420px;background:radial-gradient(circle,rgba(91,60,160,0.5),transparent 70%);top:-6%;right:6%;" aria-hidden="true"></div>
+    <section class="page-hero">
       <div class="container">
-        <div class="u-center" style="max-width:640px;margin-inline:auto;">
-          <span class="eyebrow center">Error 404</span>
-          <h1 style="font-size:clamp(3.4rem,2rem+6vw,6rem);line-height:1;margin:.6rem 0;">4<span class="text-gold">0</span>4</h1>
-          <h2 style="margin-bottom:.6rem;">This Page Has Drifted <span class="text-gold">Off the Chart</span></h2>
-          <p class="lead">The page you are looking for may have moved or no longer exists. Don't worry — the rest of the site is working perfectly. Let the stars guide you back.</p>
-          <div class="btn-row" style="justify-content:center;margin-top:1.6rem;">
-            <a class="btn btn-lg" href="/">Return Home</a>
-            <a class="btn btn-ghost btn-lg" href="/contact/">Report a Broken Link</a>
-          </div>
-          <div class="hero-roles" style="justify-content:center;margin-top:2rem;">
-            <a class="role-chip" href="/about/">About</a>
-            <a class="role-chip" href="/services/">Services</a>
-            <a class="role-chip" href="/packages/">Packages</a>
-            <a class="role-chip" href="/gallery/">Gallery</a>
-            <a class="role-chip" href="/videos/">Videos</a>
-            <a class="role-chip" href="/testimonials/">Reviews</a>
-            <a class="role-chip" href="/contact/">Contact</a>
-          </div>
+        <span class="eyebrow center">Read &amp; Learn</span>
+        <h1>The <span class="text-gold">Blog</span></h1>
+        <p class="lead" style="max-width:66ch;margin:1rem auto 0;">Articles and write-ups on astrology, Vastu and purposeful living by Shri Shri Amit Agarwal.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a><span>›</span><span aria-current="page">Blog</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-3" id="blog-grid" aria-live="polite">
+          <p class="blog-status">Loading articles…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner" data-reveal="scale">
+          <h2>Want Guidance For Your <span class="text-gold">Own Chart?</span></h2>
+          <p>Book a personal consultation to receive guidance tailored to you.</p>
+          <div class="btn-row"><a class="btn btn-lg" href="/contact/">Book Consultation</a></div>
         </div>
       </div>
     </section>
   </main>
+
   <footer class="site-footer" id="site-footer">
     <div class="container">
       <div class="footer-top">
@@ -151,12 +173,14 @@
       </div>
     </div>
   </footer>
-  <!-- Scripts (data first, main.js last) -->
+  <a class="fab-wa" href="https://wa.me/919336333207?text=Namaste%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Shri%20Shri%20Amit%20Agarwal." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M8.5 8.5c-.3 0-.6.1-.8.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.1.7.6-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.1-1.3-.1-.1-.3-.2-.6-.4l-1.6-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.7-.3-1.5-.6-2.4-1.6-.7-.7-1.1-1.5-1.3-1.8-.1-.2 0-.4.1-.5l.5-.6c.1-.2.1-.3.2-.50-.2 0-.3-.1-.5l-.7-1.7c-.2-.5-.4-.4-.6-.4h-.4z" fill="currentColor" stroke="none"/></svg></a>
+  <button class="to-top" data-ic="arrow" aria-label="Back to top"></button>
   <script src="/js/data.js?v=15"></script>
   <script defer src="/js/animations.js?v=6"></script>
   <script defer src="/js/slider.js?v=6"></script>
   <script defer src="/js/gallery.js?v=7"></script>
   <script defer src="/js/main.js?v=12"></script>
+  <script defer src="/js/blog.js?v=1"></script>
   <script defer src="/js/cursor-glow.js?v=2"></script>
 </body>
 </html>
