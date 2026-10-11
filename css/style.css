@@ -931,3 +931,18 @@ section { position: relative; }
 .blog-title { padding: 1.1rem 1.3rem 1.4rem; font-size: 1.1rem; color: var(--soft-white); line-height: 1.4; }
 .blog-card:hover .blog-title { color: var(--gold-400); }
 .blog-status { grid-column: 1 / -1; text-align: center; color: var(--text-muted); }
+
+/* Horoscope page */
+.lang-toggle { display: inline-flex; gap: .25rem; margin-top: 1.5rem; padding: .25rem; border: 1px solid var(--gold, #d4af37); border-radius: 999px; }
+.lang-btn { background: transparent; border: 0; color: inherit; font: inherit; padding: .45rem 1.1rem; border-radius: 999px; cursor: pointer; }
+.lang-btn.is-active { background: var(--gold, #d4af37); color: #0a0e27; font-weight: 600; }
+.hs-date, .hs-credit { text-align: center; opacity: .8; margin-top: .5rem; }
+.hs-credit { margin-top: 2rem; font-size: .9rem; }
+.hs-credit a { text-decoration: underline; }
+.hs-status { text-align: center; grid-column: 1 / -1; opacity: .8; }
+.panchang-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+.panchang-item { padding: 1.1rem 1.25rem; }
+.panchang-item dt { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; opacity: .7; margin-bottom: .35rem; }
+.panchang-item dd { margin: 0; font-size: 1.05rem; line-height: 1.5; overflow-wrap: anywhere; }
+.rashi-card h3 { margin-bottom: .5rem; }
+.rashi-card p { margin: 0; line-height: 1.65; }
