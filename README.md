@@ -29,7 +29,6 @@ astrology-site/
 ├── services/index.html # 15 services     →  /services/
 ├── packages/index.html # Pricing + table →  /packages/
 ├── gallery/index.html  # Masonry + box   →  /gallery/
-├── videos/index.html   # YouTube grid    →  /videos/
 ├── testimonials/index.html # Reviews     →  /testimonials/
 ├── contact/index.html  # Form, map, FAQ  →  /contact/
 ├── css/

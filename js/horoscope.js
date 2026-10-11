@@ -12,7 +12,7 @@
       lead: "Today's Panchang and Rashifal for all twelve zodiac signs, by Shri Shri Amit Agarwal.",
       pnEyebrow: 'Panchang', pnHead: "Today's <Panchang>", rfEyebrow: 'Rashifal', rfHead: 'Daily <Rashifal>',
       loading: 'Loading…', pending: "Today's entry is coming soon. Please check back shortly.",
-      error: 'Unable to load right now. Please try again later.', source: 'Source', ai: 'Partly AI-assisted.',
+      error: 'Unable to load right now. Please try again later.', source: 'Source',
       locale: 'en-IN', panchang: 'Panchang', rashifal: 'Rashifal'
     },
     hi: {
@@ -20,7 +20,7 @@
       lead: 'श्री श्री अमित अग्रवाल द्वारा आज का पंचांग और सभी बारह राशियों का राशिफल।',
       pnEyebrow: 'पंचांग', pnHead: 'आज का <पंचांग>', rfEyebrow: 'राशिफल', rfHead: 'दैनिक <राशिफल>',
       loading: 'लोड हो रहा है…', pending: 'आज की प्रविष्टि जल्द ही उपलब्ध होगी। कृपया थोड़ी देर बाद देखें।',
-      error: 'अभी लोड नहीं हो सका। कृपया बाद में प्रयास करें।', source: 'स्रोत', ai: 'आंशिक रूप से AI-सहायता प्राप्त।',
+      error: 'अभी लोड नहीं हो सका। कृपया बाद में प्रयास करें।', source: 'स्रोत',
       locale: 'hi-IN', panchang: 'पंचांग', rashifal: 'राशिफल'
     }
   };
@@ -128,8 +128,6 @@
     a.href = SOURCE_URL; a.target = '_blank'; a.rel = 'noopener';
     box.appendChild(a);
     if (name) box.appendChild(document.createTextNode(' · ' + name));
-    var ai = (d.data && d.data.signs || []).some(function (s) { return s && s.ai; });
-    if (ai) box.appendChild(document.createTextNode(' · ' + UI[l].ai));
   }
 
   function load(kind, l, render, container) {
